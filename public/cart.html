@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cart - FA Digital Store</title>
+<style>
+body{font-family:sans-serif;background:#0f172a;color:#fff;padding:20px;max-width:600px;margin:auto}
+header{display:flex;justify-content:space-between;align-items:center;background:#1e293b;padding:15px;border-radius:8px;margin-bottom:20px}
+header h1{margin:0;color:#38bdf8;font-size:18px}
+nav a{color:#cbd5e1;text-decoration:none;margin-left:10px;font-weight:bold}
+.box{background:#1e293b;padding:20px;border-radius:8px;margin-bottom:15px}
+input,textarea{width:100%;padding:10px;margin:8px 0 15px;border-radius:6px;border:1px solid #334155;background:#0f172a;color:#fff;box-sizing:border-box}
+button{background:#10b981;color:#fff;width:100%;padding:12px;border:0;border-radius:6px;font-size:16px;font-weight:bold;cursor:pointer}
+.del-btn{background:#ef4444;color:#fff;padding:4px 8px;width:auto;font-size:12px;border:0;border-radius:4px;cursor:pointer}
+table{width:100%;border-collapse:collapse;margin-bottom:15px}
+td,th{padding:8px;border-bottom:1px solid #334155;text-align:left}
+</style>
+</head>
+<body>
+<header>
+  <h1>FA Digital Store</h1>
+  <nav><a href="index.html">Home</a><a href="shop.html">Shop</a><a href="admin.html">Admin 👑</a></nav>
+</header>
+<h2>🛒 Shopping Cart & Checkout</h2>
+<div id="cartView"></div>
+
+<script>
+function render(){
+  let cart = JSON.parse(localStorage.getItem('cart')) || [];
+  let cView = document.getElementById('cartView');
+  if(!cart.length){
+    cView.innerHTML = '<p>Your cart is empty! <a href="shop.html" style="color:#38bdf8">Go to Shop 🛍️</a></p>';
+    return;
+  }
+  let total = 0;
+  let rows = cart.map((item, i) => {
+    let p = typeof item.price === 'number' ? item.price : parseFloat(String(item.price).replace(/[^0-9.]/g,''))||0;
+    let q = item.quantity || 1;
+    total += p * q;
+    return `<tr><td>${item.title || item.name}</td><td>Rs. ${p.toLocaleString()}</td><td><button class="del-btn" onclick="del(${i})">Delete</button></td></tr>`;
+  }).join('');
+
+  cView.innerHTML = `
+    <div class="box">
+      <table><tr><th>Item</th><th>Price</th><th>Action</th></tr>${rows}</table>
+      <h3 style="color:#38bdf8">Total: Rs. ${total.toLocaleString()}</h3>
+    </div>
+    <div class="box">
+      <h3>📋 Shipping Details</h3>
+      <form onsubmit="placeOrder(event, ${total})">
+        <input type="text" id="cName" required placeholder="Full Name">
+        <input type="tel" id="cPhone" required placeholder="Phone Number">
+        <textarea id="cAddr" rows="3" required placeholder="Full Address"></textarea>
+        <button type="submit">Confirm Order 🎉</button>
+      </form>
+    </div>
+  `;
+}
+
+function del(i){
+  let cart = JSON.parse(localStorage.getItem('cart')) || [];
+  cart.splice(i, 1);
+  localStorage.setItem('cart', JSON.stringify(cart));
+  render();
+}
+
+async function placeOrder(e, total){
+  e.preventDefault();
+  let cart = JSON.parse(localStorage.getItem('cart')) || [];
+  let order = {
+    id: 'ORD-' + Math.floor(100000 + Math.random() * 900000),
+    date: new Date().toLocaleString(),
+    customer: {
+      name: document.getElementById('cName').value,
+      phone: document.getElementById('cPhone').value,
+      address: document.getElementById('cAddr').value
+    },
+    items: cart,
+    total: total,
+    status: 'Pending ⏳'
+  };
+
+  try {
+    let res = await fetch('/api/orders', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(order)
+    });
+    if(res.ok){
+      localStorage.removeItem('cart');
+      alert('🎉 Order sent to Backend Server!');
+      window.location.href = 'admin.html';
+    }
+  } catch(err) {
+    alert('Failed to send order to server');
+  }
+}
+
+window.onload = render;
+</script>
+</body>
+</html>

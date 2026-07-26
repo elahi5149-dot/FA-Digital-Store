@@ -1,0 +1,21 @@
+[
+  {
+    "id": "ORD-662053",
+    "date": "7/26/2026, 1:52:01 PM",
+    "customer": {
+      "name": "Fazal",
+      "phone": "03449744378",
+      "address": "Pakistan "
+    },
+    "items": [
+      {
+        "title": "Magnetic Car Charger",
+        "name": "Magnetic Car Charger",
+        "price": 2199,
+        "quantity": 1
+      }
+    ],
+    "total": 2199,
+    "status": "Pending ⏳"
+  }
+]

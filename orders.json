@@ -1,0 +1,218 @@
+[
+  {
+    "id": "ORD-444272",
+    "date": "7/26/2026, 12:41:31 PM",
+    "customer": {
+      "name": "Fazal Elahi",
+      "phone": "03449744378",
+      "address": "Pakistan"
+    },
+    "items": [
+      {
+        "title": "TWS Pro Wireless Earbuds",
+        "name": "TWS Pro Wireless Earbuds",
+        "price": 2999,
+        "quantity": 1
+      }
+    ],
+    "total": 2999,
+    "status": "Pending ⏳"
+  },
+  {
+    "id": "ORD-225753",
+    "date": "7/26/2026, 12:40:34 PM",
+    "customer": {
+      "name": "Fazal Elahi",
+      "phone": "03449744378",
+      "address": "Pakistan"
+    },
+    "items": [
+      {
+        "title": "TWS Pro Wireless Earbuds",
+        "name": "TWS Pro Wireless Earbuds",
+        "price": 2999,
+        "quantity": 1
+      },
+      {
+        "title": "Smart Watch Ultra Series 8",
+        "name": "Smart Watch Ultra Series 8",
+        "price": 4499,
+        "quantity": 1
+      }
+    ],
+    "total": 7498,
+    "status": "Pending ⏳"
+  },
+  {
+    "id": "ORD-609771",
+    "date": "7/26/2026, 12:24:32 PM",
+    "customer": {
+      "name": "Fazal Elahi",
+      "phone": "03449744378",
+      "address": "Pakistan"
+    },
+    "items": [
+      {
+        "title": "TWS Pro Wireless Earbuds",
+        "name": "TWS Pro Wireless Earbuds",
+        "price": 2999,
+        "quantity": 1
+      },
+      {
+        "title": "Smart Watch Ultra Series 8",
+        "name": "Smart Watch Ultra Series 8",
+        "price": 4499,
+        "quantity": 2
+      }
+    ],
+    "total": 11997,
+    "status": "Pending ⏳"
+  },
+  {
+    "id": "ORD-429488",
+    "date": "7/26/2026, 12:21:15 PM",
+    "customer": {
+      "name": "Fazal Elahi",
+      "phone": "03449744378",
+      "address": "Pakistan"
+    },
+    "items": [
+      {
+        "title": "Smart Watch Ultra Series 8",
+        "name": "Smart Watch Ultra Series 8",
+        "price": 4499,
+        "quantity": 1
+      },
+      {
+        "title": "20000mAh Fast Power Bank",
+        "name": "20000mAh Fast Power Bank",
+        "price": 3299,
+        "quantity": 1
+      },
+      {
+        "title": "TWS Pro Wireless Earbuds",
+        "name": "TWS Pro Wireless Earbuds",
+        "price": 2999,
+        "quantity": 1
+      }
+    ],
+    "total": 10797,
+    "status": "Pending ⏳"
+  },
+  {
+    "id": "ORD-388367",
+    "date": "7/26/2026, 12:19:15 PM",
+    "customer": {
+      "name": "Fazal Elahi",
+      "phone": "03449744378",
+      "address": "Pakistan"
+    },
+    "items": [
+      {
+        "title": "20000mAh Fast Power Bank",
+        "name": "20000mAh Fast Power Bank",
+        "price": 3299,
+        "quantity": 1
+      },
+      {
+        "title": "65W Fast Wall Charger",
+        "name": "65W Fast Wall Charger",
+        "price": 1899,
+        "quantity": 1
+      },
+      {
+        "title": "Gaming Headphones Surround Sound",
+        "name": "Gaming Headphones Surround Sound",
+        "price": 3899,
+        "quantity": 1
+      }
+    ],
+    "total": 9097,
+    "status": "Pending ⏳"
+  },
+  {
+    "id": "ORD-154280",
+    "date": "7/26/2026, 9:00:38 AM",
+    "customer": {
+      "name": "Fazal Elahi",
+      "phone": "03449744378",
+      "address": "Pakistan"
+    },
+    "items": [
+      {
+        "name": "Smartwatch Series 8",
+        "price": 4500,
+        "image": "https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?w=400&auto=format&fit=crop&q=80",
+        "quantity": 2
+      },
+      {
+        "name": "20W Fast Charger",
+        "price": 1200,
+        "image": "https://images.unsplash.com/photo-1583863788434-e58a36330cf0?w=400&auto=format&fit=crop&q=80",
+        "quantity": 4
+      },
+      {
+        "name": "Smartwatch Series 8",
+        "price": 4500,
+        "image": "https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?w=400&auto=format&fit=crop&q=80"
+      },
+      {
+        "name": "Smartwatch Series 8",
+        "price": 4500,
+        "image": "https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?w=400&auto=format&fit=crop&q=80"
+      },
+      {
+        "name": "Welcome to FA Digital Store",
+        "price": "Premium Quality Products at Affordable Prices",
+        "quantity": 2
+      },
+      {
+        "name": "Wireless Earbuds",
+        "price": "Rs. 2,500",
+        "quantity": 2
+      },
+      {
+        "name": "Smartwatch",
+        "price": "Rs. 4,500",
+        "quantity": 2
+      },
+      {
+        "name": "Wireless Earbuds Pro",
+        "price": "Rs. 3,500",
+        "quantity": 1
+      },
+      {
+        "title": "20000mAh Fast Power Bank",
+        "name": "20000mAh Fast Power Bank",
+        "price": 3299,
+        "quantity": 1
+      },
+      {
+        "title": "Gaming Headphones Surround Sound",
+        "name": "Gaming Headphones Surround Sound",
+        "price": 3899,
+        "quantity": 1
+      },
+      {
+        "title": "Smart Watch Ultra Series 8",
+        "name": "Smart Watch Ultra Series 8",
+        "price": 4499,
+        "quantity": 2
+      },
+      {
+        "title": "Magnetic Car Charger",
+        "name": "Magnetic Car Charger",
+        "price": 2199,
+        "quantity": 1
+      },
+      {
+        "title": "TWS Pro Wireless Earbuds",
+        "name": "TWS Pro Wireless Earbuds",
+        "price": 2999,
+        "quantity": 1
+      }
+    ],
+    "total": 44195.75,
+    "status": "Pending ⏳"
+  }
+]

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - FA Digital Store</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #0f172a; color: #f8fafc; }
+        header { background: #1e293b; padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #334155; position: sticky; top: 0; z-index: 1000; }
+        header h1 { color: #38bdf8; font-size: 24px; font-weight: 700; }
+        nav a { color: #cbd5e1; text-decoration: none; margin-left: 20px; font-size: 15px; font-weight: 500; }
+        nav a:hover { color: #38bdf8; }
+        .cart-badge { background: #38bdf8; color: #0f172a; padding: 2px 8px; border-radius: 12px; font-weight: bold; font-size: 13px; }
+        .container { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
+        h2 { text-align: center; color: #38bdf8; margin-bottom: 10px; font-size: 28px; }
+        .section-subtitle { text-align: center; color: #94a3b8; font-size: 15px; margin-bottom: 35px; }
+        .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; }
+        .product-card { background: #1e293b; border: 1px solid #334155; border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; transition: 0.3s; }
+        .product-card:hover { border-color: #38bdf8; transform: translateY(-4px); box-shadow: 0 8px 20px rgba(0,0,0,0.4); }
+        .product-img { width: 100%; height: 210px; object-fit: cover; background: #0f172a; }
+        .product-info { padding: 18px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
+        .badge { background: #ef4444; color: #fff; font-size: 11px; font-weight: bold; padding: 3px 8px; border-radius: 4px; display: inline-block; margin-bottom: 8px; align-self: flex-start; }
+        .product-title { font-size: 17px; font-weight: bold; color: #f8fafc; margin-bottom: 8px; }
+        .rating { color: #f59e0b; font-size: 14px; margin-bottom: 10px; }
+        .price-box { font-size: 19px; font-weight: bold; color: #38bdf8; margin-bottom: 15px; }
+        .old-price { text-decoration: line-through; color: #64748b; font-size: 14px; margin-left: 8px; }
+        .add-btn { background: #0284c7; color: white; border: none; padding: 10px; border-radius: 6px; font-size: 14px; font-weight: bold; cursor: pointer; width: 100%; transition: 0.2s; }
+        .add-btn:hover { background: #0369a1; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>FA Digital Store</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="shop.html">Shop</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="cart.html">Cart 🛒 <span class="cart-badge" id="cartCount">0</span></a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h2>All Products</h2>
+        <p class="section-subtitle">Browse our complete collection of premium tech items</p>
+        <div class="products-grid">
+            
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=500" class="product-img" alt="Earbuds">
+                <div class="product-info">
+                    <div>
+                        <span class="badge">20% OFF</span>
+                        <div class="product-title">TWS Pro Wireless Earbuds</div>
+                        <div class="rating">⭐⭐⭐⭐⭐ (4.9)</div>
+                    </div>
+                    <div>
+                        <div class="price-box">Rs. 2,999 <span class="old-price">Rs. 3,800</span></div>
+                        <button class="add-btn" onclick="addToCart('TWS Pro Wireless Earbuds', 2999)">Add to Cart 🛒</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?w=500" class="product-img" alt="Watch">
+                <div class="product-info">
+                    <div>
+                        <span class="badge">HOT</span>
+                        <div class="product-title">Smart Watch Ultra Series 8</div>
+                        <div class="rating">⭐⭐⭐⭐⭐ (4.8)</div>
+                    </div>
+                    <div>
+                        <div class="price-box">Rs. 4,499 <span class="old-price">Rs. 5,500</span></div>
+                        <button class="add-btn" onclick="addToCart('Smart Watch Ultra Series 8', 4499)">Add to Cart 🛒</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1609592424109-dd9892f1b177?w=500" class="product-img" alt="Powerbank">
+                <div class="product-info">
+                    <div>
+                        <span class="badge">NEW</span>
+                        <div class="product-title">20,000mAh Fast Power Bank</div>
+                        <div class="rating">⭐⭐⭐⭐☆ (4.7)</div>
+                    </div>
+                    <div>
+                        <div class="price-box">Rs. 3,299 <span class="old-price">Rs. 4,000</span></div>
+                        <button class="add-btn" onclick="addToCart('20000mAh Fast Power Bank', 3299)">Add to Cart 🛒</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1583863788434-e58a36330cf0?w=500" class="product-img" alt="Charger">
+                <div class="product-info">
+                    <div>
+                        <span class="badge">BESTSELLER</span>
+                        <div class="product-title">65W Fast Wall Charger (Type-C)</div>
+                        <div class="rating">⭐⭐⭐⭐⭐ (5.0)</div>
+                    </div>
+                    <div>
+                        <div class="price-box">Rs. 1,899 <span class="old-price">Rs. 2,500</span></div>
+                        <button class="add-btn" onclick="addToCart('65W Fast Wall Charger', 1899)">Add to Cart 🛒</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=500" class="product-img" alt="Headphones">
+                <div class="product-info">
+                    <div>
+                        <span class="badge">POPULAR</span>
+                        <div class="product-title">Gaming Headphones Surround Sound</div>
+                        <div class="rating">⭐⭐⭐⭐☆ (4.6)</div>
+                    </div>
+                    <div>
+                        <div class="price-box">Rs. 3,899 <span class="old-price">Rs. 4,800</span></div>
+                        <button class="add-btn" onclick="addToCart('Gaming Headphones Surround Sound', 3899)">Add to Cart 🛒</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=500" class="product-img" alt="Speaker">
+                <div class="product-info">
+                    <div>
+                        <span class="badge">SALE</span>
+                        <div class="product-title">Portable Wireless Bluetooth Speaker</div>
+                        <div class="rating">⭐⭐⭐⭐⭐ (4.9)</div>
+                    </div>
+                    <div>
+                        <div class="price-box">Rs. 2,799 <span class="old-price">Rs. 3,500</span></div>
+                        <button class="add-btn" onclick="addToCart('Portable Bluetooth Speaker', 2799)">Add to Cart 🛒</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1575311373937-040b8e1fd5b6?w=500" class="product-img" alt="Fitness Band">
+                <div class="product-info">
+                    <div>
+                        <span class="badge">NEW</span>
+                        <div class="product-title">Smart Fitness Band 7</div>
+                        <div class="rating">⭐⭐⭐⭐☆ (4.5)</div>
+                    </div>
+                    <div>
+                        <div class="price-box">Rs. 2,499 <span class="old-price">Rs. 3,200</span></div>
+                        <button class="add-btn" onclick="addToCart('Smart Fitness Band 7', 2499)">Add to Cart 🛒</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=500" class="product-img" alt="Car Charger">
+                <div class="product-info">
+                    <div>
+                        <span class="badge">USEFUL</span>
+                        <div class="product-title">Magnetic Wireless Car Mount Charger</div>
+                        <div class="rating">⭐⭐⭐⭐⭐ (4.8)</div>
+                    </div>
+                    <div>
+                        <div class="price-box">Rs. 2,199 <span class="old-price">Rs. 2,800</span></div>
+                        <button class="add-btn" onclick="addToCart('Magnetic Car Charger', 2199)">Add to Cart 🛒</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        function updateCartBadge() {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            let totalQty = cart.reduce((sum, item) => sum + (parseInt(item.quantity) || 1), 0);
+            document.getElementById('cartCount').innerText = totalQty;
+        }
+
+        function addToCart(name, price) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            let existing = cart.find(item => item.title === name || item.name === name);
+            if (existing) {
+                existing.quantity = (parseInt(existing.quantity) || 1) + 1;
+            } else {
+                cart.push({ title: name, name: name, price: price, quantity: 1 });
+            }
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartBadge();
+            alert(`"${name}" added to cart! 🎉`);
+        }
+
+        window.onload = updateCartBadge;
+    </script>
+</body>
+</html>

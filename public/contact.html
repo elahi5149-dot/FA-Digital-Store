@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - FA Digital Store</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #0f172a; color: #f8fafc; margin: 0; padding: 0; }
+        header { background: #1e293b; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #334155; }
+        header h1 { margin: 0; color: #38bdf8; font-size: 22px; }
+        nav a { color: #cbd5e1; text-decoration: none; margin-left: 15px; font-size: 15px; font-weight: 500; }
+        .container { max-width: 800px; margin: 40px auto; padding: 0 20px; }
+        .card { background: #1e293b; border: 1px solid #334155; border-radius: 10px; padding: 30px; box-shadow: 0 4px 6px rgba(0,0,0,0.2); }
+        h2 { color: #38bdf8; margin-top: 0; text-align: center; }
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; margin-bottom: 6px; color: #cbd5e1; }
+        .form-group input, .form-group textarea { width: 100%; padding: 12px; border-radius: 6px; border: 1px solid #334155; background: #0f172a; color: #fff; box-sizing: border-box; font-size: 15px; outline: none; }
+        .btn { background: #0284c7; color: white; width: 100%; padding: 12px; border: none; border-radius: 6px; font-weight: bold; font-size: 16px; cursor: pointer; }
+        .contact-info { margin-top: 30px; padding-top: 20px; border-top: 1px solid #334155; text-align: center; color: #cbd5e1; line-height: 1.8; }
+        .contact-info a { color: #38bdf8; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>FA Digital Store</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="shop.html">Shop</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="cart.html">Cart 🛒</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="card">
+            <h2>Contact Us</h2>
+            <form onsubmit="sendMessage(event)">
+                <div class="form-group">
+                    <label>Your Name</label>
+                    <input type="text" required placeholder="Enter your full name">
+                </div>
+                <div class="form-group">
+                    <label>Your Email</label>
+                    <input type="email" required placeholder="example@mail.com">
+                </div>
+                <div class="form-group">
+                    <label>Message</label>
+                    <textarea rows="4" required placeholder="Type your message here..."></textarea>
+                </div>
+                <button type="submit" class="btn">Send Message 📩</button>
+            </form>
+
+            <div class="contact-info">
+                <p>📍 <strong>Location:</strong> Pakistan</p>
+                <p>📞 <strong>Phone / WhatsApp:</strong> <a href="tel:03221918391">03221918391</a></p>
+                <p>✉️ <strong>Email:</strong> <a href="mailto:elahi5149@gmail.com">elahi5149@gmail.com</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function sendMessage(e) {
+            e.preventDefault();
+            alert('Your message has been received! We will contact you shortly.');
+            e.target.reset();
+        }
+    </script>
+</body>
+</html>

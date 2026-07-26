@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Dashboard - FA Digital Store</title>
+<style>
+body{font-family:sans-serif;background:#0f172a;color:#fff;padding:20px;max-width:800px;margin:auto}
+header{display:flex;justify-content:space-between;align-items:center;background:#1e293b;padding:15px;border-radius:8px;margin-bottom:20px}
+header h1{margin:0;color:#38bdf8;font-size:18px}
+nav a{color:#cbd5e1;text-decoration:none;margin-left:10px;font-weight:bold}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-bottom:20px}
+.card{background:#1e293b;padding:15px;border-radius:8px;text-align:center}
+.card h2{margin:0;font-size:28px;color:#38bdf8}
+.btn-clear{background:#ef4444;color:#fff;width:100%;padding:10px;border:0;border-radius:6px;font-weight:bold;margin-bottom:20px;cursor:pointer}
+.order-card{background:#1e293b;border-left:4px solid #f59e0b;padding:15px;border-radius:8px;margin-bottom:15px}
+.order-header{display:flex;justify-content:space-between;color:#cbd5e1;font-size:14px;border-bottom:1px solid #334155;padding-bottom:8px;margin-bottom:10px}
+.cust-info{background:#0f172a;padding:10px;border-radius:6px;margin-bottom:10px;font-size:14px}
+.items-table{width:100%;border-collapse:collapse;font-size:13px;margin-bottom:10px}
+.items-table td,.items-table th{padding:6px;border-bottom:1px solid #334155;text-align:left}
+.actions{display:flex;justify-content:space-between;align-items:center}
+.status-btn{padding:6px 12px;border:0;border-radius:4px;font-weight:bold;cursor:pointer}
+.status-pending{background:#f59e0b;color:#000}
+.status-completed{background:#10b981;color:#fff}
+.del-btn{background:#ef4444;color:#fff;padding:6px 12px;border:0;border-radius:4px;cursor:pointer}
+</style>
+</head>
+<body>
+<header>
+  <h1>FA Store - Admin Panel 👑</h1>
+  <nav><a href="index.html">Home</a><a href="shop.html">Shop</a><a href="cart.html">Cart</a></nav>
+</header>
+
+<div class="stats">
+  <div class="card"><h2 id="totalOrders">0</h2><p>Total Orders</p></div>
+  <div class="card"><h2 id="totalRevenue">Rs. 0</h2><p>Total Revenue</p></div>
+</div>
+
+<button class="btn-clear" onclick="clearAll()">🗑️ Clear All Orders</button>
+
+<div id="ordersList">Loading orders from server...</div>
+
+<script>
+async function loadOrders(){
+  try {
+    let res = await fetch('/api/orders');
+    let orders = await res.json();
+    
+    document.getElementById('totalOrders').innerText = orders.length;
+    let rev = orders.reduce((sum, o) => sum + (o.total || 0), 0);
+    document.getElementById('totalRevenue').innerText = 'Rs. ' + rev.toLocaleString();
+
+    let list = document.getElementById('ordersList');
+    if(!orders.length){
+      list.innerHTML = '<p style="text-align:center">No orders received yet. 📬</p>';
+      return;
+    }
+
+    list.innerHTML = orders.map(o => `
+      <div class="order-card" style="border-left-color: ${o.status.includes('Completed') ? '#10b981' : '#f59e0b'}">
+        <div class="order-header">
+          <strong style="color:#38bdf8">${o.id}</strong>
+          <span>${o.date}</span>
+        </div>
+        <div class="cust-info">
+          👤 <strong>Customer:</strong> ${o.customer.name}<br>
+          📞 <strong>Phone:</strong> ${o.customer.phone}<br>
+          📍 <strong>Address:</strong> ${o.customer.address}
+        </div>
+        <table class="items-table">
+          <tr><th>Item</th><th>Qty</th><th>Price</th></tr>
+          ${o.items.map(i => `<tr><td>${i.title || i.name}</td><td>${i.quantity || 1}x</td><td>Rs. ${(i.price || 0).toLocaleString()}</td></tr>`).join('')}
+        </table>
+        <div class="actions">
+          <strong>Total: Rs. ${(o.total || 0).toLocaleString()}</strong>
+          <div>
+            <button class="status-btn ${o.status.includes('Completed') ? 'status-completed' : 'status-pending'}" onclick="toggleStatus('${o.id}')">${o.status}</button>
+            <button class="del-btn" onclick="delOrder('${o.id}')">Delete</button>
+          </div>
+        </div>
+      </div>
+    `).join('');
+  } catch(e) {
+    document.getElementById('ordersList').innerHTML = '<p style="color:#ef4444">Error loading orders from server.</p>';
+  }
+}
+
+async function toggleStatus(id){
+  await fetch(`/api/orders/${id}/status`, { method: 'PUT' });
+  loadOrders();
+}
+
+async function delOrder(id){
+  if(confirm('Delete this order?')){
+    await fetch(`/api/orders/${id}`, { method: 'DELETE' });
+    loadOrders();
+  }
+}
+
+async function clearAll(){
+  if(confirm('Clear ALL orders permanently from backend?')){
+    await fetch('/api/orders', { method: 'DELETE' });
+    loadOrders();
+  }
+}
+
+window.onload = loadOrders;
+</script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "name": "Wireless Earbuds",
+    "price": 2999,
+    "image": "images/earbuds.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Smart Watch",
+    "price": 4999,
+    "image": "images/watch.jpg"
+  }
+]

@@ -3,12 +3,60 @@
     "id": 1,
     "name": "Wireless Earbuds",
     "price": 2999,
-    "image": "images/earbuds.jpg"
+    "image": "https://placehold.co/600x600/png?text=Wireless%20Earbuds"
   },
   {
     "id": 2,
     "name": "Smart Watch",
     "price": 4999,
-    "image": "images/watch.jpg"
+    "image": "https://placehold.co/600x600/png?text=Smart%20Watch"
+  },
+  {
+    "id": 3,
+    "name": "Men's Winter Coat",
+    "price": 7999,
+    "image": "https://placehold.co/600x600/png?text=Men%27s%20Winter%20Coat"
+  },
+  {
+    "id": 4,
+    "name": "Men's Casual Shoes",
+    "price": 4999,
+    "image": "https://placehold.co/600x600/png?text=Men%27s%20Casual%20Shoes"
+  },
+  {
+    "id": 5,
+    "name": "Men's Wool Sweater",
+    "price": 3999,
+    "image": "https://placehold.co/600x600/png?text=Men%27s%20Wool%20Sweater"
+  },
+  {
+    "id": 6,
+    "name": "Men's Hoodie",
+    "price": 3499,
+    "image": "https://placehold.co/600x600/png?text=Men%27s%20Hoodie"
+  },
+  {
+    "id": 7,
+    "name": "Men's Jeans",
+    "price": 4499,
+    "image": "https://placehold.co/600x600/png?text=Men%27s%20Jeans"
+  },
+  {
+    "id": 8,
+    "name": "Men's T-Shirt",
+    "price": 1999,
+    "image": "https://placehold.co/600x600/png?text=Men%27s%20T-Shirt"
+  },
+  {
+    "id": 9,
+    "name": "Men's Tracksuit",
+    "price": 5499,
+    "image": "https://placehold.co/600x600/png?text=Men%27s%20Tracksuit"
+  },
+  {
+    "id": 10,
+    "name": "Men's Casual Shirt",
+    "price": 2999,
+    "image": "https://placehold.co/600x600/png?text=Men%27s%20Casual%20Shirt"
   }
 ]

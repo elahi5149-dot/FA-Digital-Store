@@ -28,6 +28,283 @@
         .add-btn { background: #0284c7; color: white; border: none; padding: 10px; border-radius: 6px; font-size: 14px; font-weight: bold; cursor: pointer; width: 100%; transition: 0.2s; }
         .add-btn:hover { background: #0369a1; }
     </style>
+
+
+<style>
+.filter-btn {
+    padding: 10px 18px;
+    border: 1px solid #444;
+    border-radius: 8px;
+    background: #222;
+    color: #fff;
+    cursor: pointer;
+}
+.filter-btn:hover,
+.filter-btn.active {
+    background: #2563eb;
+    border-color: #2563eb;
+}
+</style>
+
+<style>
+/* ===== FA DIGITAL STORE - CENTERED MOBILE DESIGN ===== */
+body{
+    background:#071a33;
+    color:#f8fafc;
+}
+
+header{
+    background:#0b1f3a;
+    padding:18px 4%;
+    min-height:95px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+header h1{
+    color:#20b9ff;
+    font-size:30px;
+    text-align:center;
+}
+
+nav{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:18px;
+    flex-wrap:wrap;
+}
+
+nav a{
+    color:#e2e8f0;
+    margin-left:0;
+    font-size:16px;
+    text-align:center;
+}
+
+.container{
+    max-width:1100px;
+    margin:25px auto;
+    padding:0 18px;
+}
+
+h2{
+    color:#20b9ff;
+    text-align:center;
+    font-size:30px;
+    margin-bottom:8px;
+}
+
+.section-subtitle{
+    text-align:center;
+    color:#b8c7d9;
+    margin-bottom:20px;
+}
+
+/* Search */
+.product-search{
+    width:100%;
+    max-width:760px;
+    display:block;
+    margin:20px auto;
+    padding:15px 22px;
+    border-radius:30px;
+    border:2px solid #155a85;
+    background:#102d4d;
+    color:white;
+    font-size:17px;
+    text-align:center;
+    outline:none;
+}
+
+.product-search:focus{
+    border-color:#20b9ff;
+    box-shadow:0 0 15px rgba(32,185,255,.25);
+}
+
+.product-search::placeholder{
+    color:#a9bfd4;
+}
+
+/* Categories */
+.category-filter{
+    display:flex !important;
+    justify-content:center !important;
+    align-items:center;
+    gap:10px !important;
+    margin:18px auto 28px !important;
+}
+
+.filter-btn{
+    padding:10px 20px !important;
+    border:1px solid #155a85 !important;
+    border-radius:25px !important;
+    background:#0d2948 !important;
+    color:#fff !important;
+    font-size:15px;
+    font-weight:600;
+}
+
+.filter-btn:hover,
+.filter-btn.active{
+    background:#079bea !important;
+    border-color:#079bea !important;
+}
+
+/* Product grid - 2 columns */
+.products-grid{
+    display:grid !important;
+    grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+    gap:22px !important;
+    max-width:1000px;
+    margin:0 auto;
+}
+
+/* Product card */
+.product-card{
+    background:#0b2340 !important;
+    border:2px solid #155a85 !important;
+    border-radius:20px !important;
+    overflow:hidden;
+    text-align:center;
+    box-shadow:0 8px 25px rgba(0,0,0,.25);
+    transition:.25s;
+}
+
+.product-card:hover{
+    border-color:#20b9ff !important;
+    transform:translateY(-4px);
+}
+
+.product-img{
+    width:100% !important;
+    height:210px !important;
+    background:#071a33 !important;
+    overflow:hidden;
+}
+
+.product-img img{
+    width:100% !important;
+    height:100% !important;
+    object-fit:cover !important;
+    display:block;
+}
+
+.product-info{
+    padding:18px 15px 20px !important;
+    text-align:center !important;
+}
+
+.product-title{
+    color:#fff !important;
+    font-size:18px !important;
+    font-weight:700;
+    text-align:center !important;
+    margin:8px 0 10px !important;
+}
+
+.rating{
+    color:#fbbf24 !important;
+    font-size:16px !important;
+    text-align:center !important;
+    margin-bottom:10px !important;
+}
+
+.price-box{
+    color:#20b9ff !important;
+    font-size:23px !important;
+    font-weight:800;
+    text-align:center !important;
+    margin-bottom:15px !important;
+}
+
+.add-btn{
+    background:#079bea !important;
+    color:white !important;
+    border:none !important;
+    padding:13px 10px !important;
+    border-radius:12px !important;
+    font-size:15px !important;
+    font-weight:700 !important;
+    width:100% !important;
+}
+
+.add-btn:hover{
+    background:#087fc4 !important;
+}
+
+/* Mobile */
+@media(max-width:600px){
+    header{
+        padding:14px 10px;
+        flex-direction:column;
+        gap:12px;
+    }
+
+    header h1{
+        font-size:28px;
+    }
+
+    nav{
+        gap:10px;
+    }
+
+    nav a{
+        font-size:13px;
+    }
+
+    .container{
+        padding:0 12px;
+        margin-top:20px;
+    }
+
+    h2{
+        font-size:25px;
+    }
+
+    .products-grid{
+        grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+        gap:12px !important;
+    }
+
+    .product-img{
+        height:155px !important;
+    }
+
+    .product-info{
+        padding:12px 8px 14px !important;
+    }
+
+    .product-title{
+        font-size:15px !important;
+    }
+
+    .rating{
+        font-size:14px !important;
+    }
+
+    .price-box{
+        font-size:18px !important;
+    }
+
+    .add-btn{
+        font-size:13px !important;
+        padding:11px 5px !important;
+    }
+
+    .filter-btn{
+        padding:8px 12px !important;
+        font-size:13px;
+    }
+
+    .product-search{
+        font-size:14px;
+        padding:13px 15px;
+    }
+}
+</style>
+
 </head>
 <body>
     <header>
@@ -43,228 +320,28 @@
 
     <div class="container">
         <h2>All Products</h2>
-        <p class="section-subtitle">Browse our complete collection of premium tech items</p>
-        <div class="products-grid">
-            
-            <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=500" class="product-img" alt="Earbuds">
-                <div class="product-info">
-                    <div>
-                        <span class="badge">20% OFF</span>
-                        <div class="product-title">TWS Pro Wireless Earbuds</div>
-                        <div class="rating">⭐⭐⭐⭐⭐ (4.9)</div>
-                    </div>
-                    <div>
-                        <div class="price-box">Rs. 2,999 <span class="old-price">Rs. 3,800</span></div>
-                        <button class="add-btn" onclick="addToCart('TWS Pro Wireless Earbuds', 2999)">Add to Cart 🛒</button>
-                    </div>
-                </div>
-            </div>
+        <p class="section-subtitle">Browse our complete collection</p>
 
-            <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?w=500" class="product-img" alt="Watch">
-                <div class="product-info">
-                    <div>
-                        <span class="badge">HOT</span>
-                        <div class="product-title">Smart Watch Ultra Series 8</div>
-                        <div class="rating">⭐⭐⭐⭐⭐ (4.8)</div>
-                    </div>
-                    <div>
-                        <div class="price-box">Rs. 4,499 <span class="old-price">Rs. 5,500</span></div>
-                        <button class="add-btn" onclick="addToCart('Smart Watch Ultra Series 8', 4499)">Add to Cart 🛒</button>
-                    </div>
-                </div>
-            </div>
+<input
+    type="search"
+    id="productSearch"
+    class="product-search"
+    placeholder="🔍 Product search..."
+    oninput="searchProducts(this.value)"
+>
 
-            <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1609592424109-dd9892f1b177?w=500" class="product-img" alt="Powerbank">
-                <div class="product-info">
-                    <div>
-                        <span class="badge">NEW</span>
-                        <div class="product-title">20,000mAh Fast Power Bank</div>
-                        <div class="rating">⭐⭐⭐⭐☆ (4.7)</div>
-                    </div>
-                    <div>
-                        <div class="price-box">Rs. 3,299 <span class="old-price">Rs. 4,000</span></div>
-                        <button class="add-btn" onclick="addToCart('20000mAh Fast Power Bank', 3299)">Add to Cart 🛒</button>
-                    </div>
-                </div>
-            </div>
+        <div class="category-filter" style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin:20px 0 30px;">
+    <button onclick="filterProducts('All')" class="filter-btn active">All</button>
+    <button onclick="filterProducts('Electronics')" class="filter-btn">Electronics</button>
+    <button onclick="filterProducts('Men')" class="filter-btn">Men</button>
+    <button onclick="filterProducts('Women')" class="filter-btn">Women</button>
+    <button onclick="filterProducts('Kids')" class="filter-btn">Kids</button>
+    <button onclick="filterProducts('Toys')" class="filter-btn">Toys</button>
+</div>
 
-            <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1583863788434-e58a36330cf0?w=500" class="product-img" alt="Charger">
-                <div class="product-info">
-                    <div>
-                        <span class="badge">BESTSELLER</span>
-                        <div class="product-title">65W Fast Wall Charger (Type-C)</div>
-                        <div class="rating">⭐⭐⭐⭐⭐ (5.0)</div>
-                    </div>
-                    <div>
-                        <div class="price-box">Rs. 1,899 <span class="old-price">Rs. 2,500</span></div>
-                        <button class="add-btn" onclick="addToCart('65W Fast Wall Charger', 1899)">Add to Cart 🛒</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=500" class="product-img" alt="Headphones">
-                <div class="product-info">
-                    <div>
-                        <span class="badge">POPULAR</span>
-                        <div class="product-title">Gaming Headphones Surround Sound</div>
-                        <div class="rating">⭐⭐⭐⭐☆ (4.6)</div>
-                    </div>
-                    <div>
-                        <div class="price-box">Rs. 3,899 <span class="old-price">Rs. 4,800</span></div>
-                        <button class="add-btn" onclick="addToCart('Gaming Headphones Surround Sound', 3899)">Add to Cart 🛒</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=500" class="product-img" alt="Speaker">
-                <div class="product-info">
-                    <div>
-                        <span class="badge">SALE</span>
-                        <div class="product-title">Portable Wireless Bluetooth Speaker</div>
-                        <div class="rating">⭐⭐⭐⭐⭐ (4.9)</div>
-                    </div>
-                    <div>
-                        <div class="price-box">Rs. 2,799 <span class="old-price">Rs. 3,500</span></div>
-                        <button class="add-btn" onclick="addToCart('Portable Bluetooth Speaker', 2799)">Add to Cart 🛒</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1575311373937-040b8e1fd5b6?w=500" class="product-img" alt="Fitness Band">
-                <div class="product-info">
-                    <div>
-                        <span class="badge">NEW</span>
-                        <div class="product-title">Smart Fitness Band 7</div>
-                        <div class="rating">⭐⭐⭐⭐☆ (4.5)</div>
-                    </div>
-                    <div>
-                        <div class="price-box">Rs. 2,499 <span class="old-price">Rs. 3,200</span></div>
-                        <button class="add-btn" onclick="addToCart('Smart Fitness Band 7', 2499)">Add to Cart 🛒</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=500" class="product-img" alt="Car Charger">
-                <div class="product-info">
-                    <div>
-                        <span class="badge">USEFUL</span>
-                        <div class="product-title">Magnetic Wireless Car Mount Charger</div>
-                        <div class="rating">⭐⭐⭐⭐⭐ (4.8)</div>
-                    </div>
-                    <div>
-                        <div class="price-box">Rs. 2,199 <span class="old-price">Rs. 2,800</span></div>
-                        <button class="add-btn" onclick="addToCart('Magnetic Car Charger', 2199)">Add to Cart 🛒</button>
-                    </div>
-                </div>
-            </div>
-
-
-
-            <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1544022613-e87ca75a784a?w=500" class="product-img" alt="Winter Coat">
-                <div class="product-info"><div>
-                    <span class="badge">NEW</span>
-                    <div class="product-title">Men's Winter Coat</div>
-                    <div class="rating">⭐⭐⭐⭐⭐ (4.8)</div>
-                </div><div>
-                    <div class="price-box">Rs. 7,999 <span class="old-price">Rs. 9,500</span></div>
-                    <button class="add-btn" onclick="addToCart('Men\'s Winter Coat',7999)">Add to Cart 🛒</button>
-                </div></div>
-            </div>
-
-            <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500" class="product-img" alt="Casual Shoes">
-                <div class="product-info"><div>
-                    <span class="badge">HOT</span>
-                    <div class="product-title">Men's Casual Shoes</div>
-                    <div class="rating">⭐⭐⭐⭐⭐ (4.7)</div>
-                </div><div>
-                    <div class="price-box">Rs. 4,999 <span class="old-price">Rs. 6,000</span></div>
-                    <button class="add-btn" onclick="addToCart('Men\'s Casual Shoes',4999)">Add to Cart 🛒</button>
-                </div></div>
-            </div>
-
-            <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=500" class="product-img" alt="Wool Sweater">
-                <div class="product-info"><div>
-                    <span class="badge">NEW</span>
-                    <div class="product-title">Men's Wool Sweater</div>
-                    <div class="rating">⭐⭐⭐⭐⭐ (4.8)</div>
-                </div><div>
-                    <div class="price-box">Rs. 3,999 <span class="old-price">Rs. 5,000</span></div>
-                    <button class="add-btn" onclick="addToCart('Men\'s Wool Sweater',3999)">Add to Cart 🛒</button>
-                </div></div>
-            </div>
-
-            <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=500" class="product-img" alt="Hoodie">
-                <div class="product-info"><div>
-                    <span class="badge">POPULAR</span>
-                    <div class="product-title">Men's Premium Hoodie</div>
-                    <div class="rating">⭐⭐⭐⭐⭐ (4.7)</div>
-                </div><div>
-                    <div class="price-box">Rs. 3,499 <span class="old-price">Rs. 4,500</span></div>
-                    <button class="add-btn" onclick="addToCart('Men\'s Premium Hoodie',3499)">Add to Cart 🛒</button>
-                </div></div>
-            </div>
-
-            <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1542272604-787c3835535d?w=500" class="product-img" alt="Jeans">
-                <div class="product-info"><div>
-                    <span class="badge">SALE</span>
-                    <div class="product-title">Men's Classic Jeans</div>
-                    <div class="rating">⭐⭐⭐⭐⭐ (4.6)</div>
-                </div><div>
-                    <div class="price-box">Rs. 4,499 <span class="old-price">Rs. 5,500</span></div>
-                    <button class="add-btn" onclick="addToCart('Men\'s Classic Jeans',4499)">Add to Cart 🛒</button>
-                </div></div>
-            </div>
-
-            <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500" class="product-img" alt="T-Shirt">
-                <div class="product-info"><div>
-                    <span class="badge">BESTSELLER</span>
-                    <div class="product-title">Men's Premium T-Shirt</div>
-                    <div class="rating">⭐⭐⭐⭐⭐ (4.9)</div>
-                </div><div>
-                    <div class="price-box">Rs. 1,999 <span class="old-price">Rs. 2,500</span></div>
-                    <button class="add-btn" onclick="addToCart('Men\'s Premium T-Shirt',1999)">Add to Cart 🛒</button>
-                </div></div>
-            </div>
-
-            <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1552902865-b72c031ac5ea?w=500" class="product-img" alt="Tracksuit">
-                <div class="product-info"><div>
-                    <span class="badge">NEW</span>
-                    <div class="product-title">Men's Sports Tracksuit</div>
-                    <div class="rating">⭐⭐⭐⭐⭐ (4.7)</div>
-                </div><div>
-                    <div class="price-box">Rs. 5,499 <span class="old-price">Rs. 6,500</span></div>
-                    <button class="add-btn" onclick="addToCart('Men\'s Sports Tracksuit',5499)">Add to Cart 🛒</button>
-                </div></div>
-            </div>
-
-            <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=500" class="product-img" alt="Casual Shirt">
-                <div class="product-info"><div>
-                    <span class="badge">POPULAR</span>
-                    <div class="product-title">Men's Casual Shirt</div>
-                    <div class="rating">⭐⭐⭐⭐⭐ (4.8)</div>
-                </div><div>
-                    <div class="price-box">Rs. 2,999 <span class="old-price">Rs. 3,800</span></div>
-                    <button class="add-btn" onclick="addToCart('Men\'s Casual Shirt',2999)">Add to Cart 🛒</button>
-                </div></div>
-            </div>
-
-        </div>
+<div class="products-grid" id="productsGrid">
+        <div style="text-align:center;padding:40px;">Loading products...</div>
+    </div>
     </div>
 
     <script>
@@ -287,7 +364,110 @@
             alert(`"${name}" added to cart! 🎉`);
         }
 
-        window.onload = updateCartBadge;
-    </script>
+window.onload = updateCartBadge;
+    
+let allProducts = [];
+let currentCategory = "All";
+
+function searchProducts(query) {
+    const q = String(query || "").trim().toLowerCase();
+
+    const filtered = allProducts.filter(product => {
+        const name = String(product.name || "").toLowerCase();
+        const category = String(product.category || "").toLowerCase();
+        const price = String(product.price || "").toLowerCase();
+
+        const matchesSearch =
+            !q ||
+            name.includes(q) ||
+            category.includes(q) ||
+            price.includes(q);
+
+        const matchesCategory =
+            currentCategory === "All" ||
+            product.category === currentCategory;
+
+        return matchesSearch && matchesCategory;
+    });
+
+    renderProducts(filtered);
+}
+
+async function loadProducts() {
+    const grid = document.getElementById("productsGrid");
+
+    try {
+        const response = await fetch("/api/products");
+
+        if (!response.ok) {
+            throw new Error("Failed to load products");
+        }
+
+        allProducts = await response.json();
+        renderProducts(allProducts);
+    } catch (error) {
+        console.error("Product loading error:", error);
+        grid.innerHTML =
+            '<p style="text-align:center;">Unable to load products.</p>';
+    }
+}
+
+function renderProducts(products) {
+    const grid = document.getElementById("productsGrid");
+
+    if (!products.length) {
+        grid.innerHTML =
+            '<p style="text-align:center;">No products found.</p>';
+        return;
+    }
+
+    grid.innerHTML = products.map(product => `
+        <div class="product-card">
+            <div class="product-img">
+                <img
+                    src="${product.image || 'https://placehold.co/600x600/png?text=Product'}"
+                    alt="${product.name || 'Product'}"
+                    loading="lazy"
+                    decoding="async"
+                >
+            </div>
+
+            <div class="product-info">
+                <h3 class="product-title">${product.name || "Product"}</h3>
+                <div class="rating">⭐ 4.5</div>
+
+                <div class="price-box">
+                    <span class="price">
+                        Rs. ${Number(product.price || 0).toLocaleString()}
+                    </span>
+                </div>
+
+                <button
+                    class="add-btn"
+                    onclick='addToCart(${JSON.stringify(product.name || "Product")}, ${Number(product.price || 0)})'
+                >
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+    `).join("");
+}
+
+function filterProducts(category) {
+    currentCategory = category;
+
+    document.querySelectorAll(".filter-btn").forEach(btn => {
+        btn.classList.toggle(
+            "active",
+            btn.textContent.trim() === category
+        );
+    });
+
+    const searchInput = document.querySelector(".product-search");
+    searchProducts(searchInput ? searchInput.value : "");
+}
+
+loadProducts();
+</script>
 </body>
 </html>

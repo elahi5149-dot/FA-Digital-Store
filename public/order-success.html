@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Order Successful - FA Digital Store</title>
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;
+  padding:20px;
+  font-family:Arial,sans-serif;
+  background:#0f172a;
+  color:#fff;
+}
+.container{max-width:650px;margin:auto}
+.header{
+  background:#1e293b;
+  padding:15px;
+  border-radius:12px;
+  margin-bottom:25px;
+  text-align:center;
+}
+.header h1{margin:0;color:#38bdf8;font-size:22px}
+.success{
+  background:#1e293b;
+  border:1px solid #334155;
+  border-radius:16px;
+  padding:30px 20px;
+  text-align:center;
+}
+.icon{
+  font-size:65px;
+  margin-bottom:10px;
+}
+h2{margin:8px 0;color:#10b981}
+.subtitle{color:#cbd5e1}
+.order-box{
+  margin-top:25px;
+  background:#0f172a;
+  border-radius:10px;
+  padding:18px;
+  text-align:left;
+}
+.row{
+  display:flex;
+  justify-content:space-between;
+  gap:15px;
+  padding:10px 0;
+  border-bottom:1px solid #334155;
+}
+.row:last-child{border-bottom:0}
+.label{color:#94a3b8}
+.value{text-align:right;font-weight:bold}
+.total{
+  color:#38bdf8;
+  font-size:20px;
+}
+.buttons{
+  display:flex;
+  gap:10px;
+  margin-top:25px;
+}
+.btn{
+  flex:1;
+  padding:13px;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:bold;
+  text-align:center;
+}
+.shop{background:#0284c7;color:#fff}
+.home{background:#334155;color:#fff}
+.note{
+  margin-top:20px;
+  color:#94a3b8;
+  font-size:13px;
+}
+@media(max-width:500px){
+  body{padding:10px}
+  .success{padding:25px 15px}
+  .buttons{flex-direction:column}
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>FA Digital Store 🛍️</h1>
+</div>
+
+<div class="success">
+
+  <div class="icon">🎉</div>
+
+  <h2>Order Placed Successfully!</h2>
+
+  <p class="subtitle">
+    Thank you for shopping with FA Digital Store.
+  </p>
+
+  <div class="order-box" id="orderInfo">
+    Loading order details...
+  </div>
+
+  <div class="buttons">
+    <a href="shop.html" class="btn shop">
+      Continue Shopping 🛍️
+    </a>
+
+    <a href="index.html" class="btn home">
+      Go Home 🏠
+    </a>
+  </div>
+
+  <p class="note">
+    Please keep your Order ID for future reference.
+  </p>
+
+</div>
+
+</div>
+
+<script>
+
+const order=JSON.parse(
+  sessionStorage.getItem('lastOrder')
+);
+
+const box=document.getElementById('orderInfo');
+
+if(!order){
+
+  box.innerHTML=`
+    <p style="text-align:center;color:#f87171">
+      Order details are not available.
+    </p>
+  `;
+
+}else{
+
+  const items=order.items || [];
+
+  let itemsHtml=items.map(item=>{
+
+    const name=item.title || item.name || 'Product';
+    const price=Number(item.price)||0;
+    const qty=Number(item.quantity)||1;
+
+    return `
+      <div class="row">
+        <span class="label">
+          ${name} × ${qty}
+        </span>
+        <span class="value">
+          Rs. ${(price*qty).toLocaleString()}
+        </span>
+      </div>
+    `;
+
+  }).join('');
+
+  box.innerHTML=`
+
+    <div class="row">
+      <span class="label">Order ID</span>
+      <span class="value">${order.id}</span>
+    </div>
+
+    <div class="row">
+      <span class="label">Customer</span>
+      <span class="value">${order.customer.name}</span>
+    </div>
+
+    <div class="row">
+      <span class="label">Phone</span>
+      <span class="value">${order.customer.phone}</span>
+    </div>
+
+    <div class="row">
+      <span class="label">Address</span>
+      <span class="value">${order.customer.address}</span>
+    </div>
+
+    <h3 style="color:#38bdf8;margin-top:20px">
+      Ordered Products
+    </h3>
+
+    ${itemsHtml}
+
+    <div class="row total">
+      <span>Total</span>
+      <span>Rs. ${Number(order.total).toLocaleString()}</span>
+    </div>
+
+    <div class="row">
+      <span class="label">Status</span>
+      <span class="value">Pending ⏳</span>
+    </div>
+  `;
+}
+
+</script>
+</body>
+</html>

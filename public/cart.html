@@ -1,102 +1,438 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Cart - FA Digital Store</title>
+
 <style>
-body{font-family:sans-serif;background:#0f172a;color:#fff;padding:20px;max-width:600px;margin:auto}
-header{display:flex;justify-content:space-between;align-items:center;background:#1e293b;padding:15px;border-radius:8px;margin-bottom:20px}
-header h1{margin:0;color:#38bdf8;font-size:18px}
-nav a{color:#cbd5e1;text-decoration:none;margin-left:10px;font-weight:bold}
-.box{background:#1e293b;padding:20px;border-radius:8px;margin-bottom:15px}
-input,textarea{width:100%;padding:10px;margin:8px 0 15px;border-radius:6px;border:1px solid #334155;background:#0f172a;color:#fff;box-sizing:border-box}
-button{background:#10b981;color:#fff;width:100%;padding:12px;border:0;border-radius:6px;font-size:16px;font-weight:bold;cursor:pointer}
-.del-btn{background:#ef4444;color:#fff;padding:4px 8px;width:auto;font-size:12px;border:0;border-radius:4px;cursor:pointer}
-table{width:100%;border-collapse:collapse;margin-bottom:15px}
-td,th{padding:8px;border-bottom:1px solid #334155;text-align:left}
+*{box-sizing:border-box}
+body{
+  font-family:Arial,sans-serif;
+  background:#0f172a;
+  color:#fff;
+  margin:0;
+  padding:15px;
+}
+.container{max-width:850px;margin:auto}
+header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:#1e293b;
+  padding:15px;
+  border-radius:12px;
+  margin-bottom:20px;
+}
+header h1{margin:0;color:#38bdf8;font-size:20px}
+nav a{
+  color:#cbd5e1;
+  text-decoration:none;
+  margin-left:10px;
+  font-weight:bold;
+}
+h2{margin-bottom:20px}
+.box{
+  background:#1e293b;
+  padding:18px;
+  border-radius:12px;
+  margin-bottom:18px;
+  border:1px solid #334155;
+}
+.cart-item{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:12px 0;
+  border-bottom:1px solid #334155;
+}
+.cart-item:last-child{border-bottom:0}
+.cart-img{
+  width:70px;
+  height:70px;
+  object-fit:cover;
+  border-radius:8px;
+  background:#0f172a;
+}
+.item-info{flex:1;min-width:0}
+.item-name{
+  font-weight:bold;
+  margin-bottom:6px;
+}
+.item-price{color:#38bdf8;font-weight:bold}
+.qty{
+  display:flex;
+  align-items:center;
+  gap:7px;
+  margin-top:8px;
+}
+.qty button{
+  width:30px;
+  height:30px;
+  padding:0;
+  background:#0284c7;
+  border:0;
+  border-radius:5px;
+  color:#fff;
+  font-size:18px;
+  font-weight:bold;
+  cursor:pointer;
+}
+.qty span{
+  min-width:28px;
+  text-align:center;
+  font-weight:bold;
+}
+.del-btn{
+  background:#ef4444;
+  color:#fff;
+  padding:7px 9px;
+  width:auto;
+  border:0;
+  border-radius:5px;
+  cursor:pointer;
+}
+.summary{
+  display:flex;
+  justify-content:space-between;
+  margin:8px 0;
+  color:#cbd5e1;
+}
+.grand-total{
+  color:#38bdf8;
+  font-size:21px;
+  font-weight:bold;
+  border-top:1px solid #334155;
+  padding-top:12px;
+  margin-top:12px;
+}
+.clear-btn{
+  background:#475569;
+  margin-top:12px;
+}
+input,textarea{
+  width:100%;
+  padding:12px;
+  margin:8px 0 15px;
+  border-radius:7px;
+  border:1px solid #334155;
+  background:#0f172a;
+  color:#fff;
+  font-size:15px;
+}
+.submit-btn{
+  background:#10b981;
+  color:#fff;
+  width:100%;
+  padding:13px;
+  border:0;
+  border-radius:7px;
+  font-size:16px;
+  font-weight:bold;
+  cursor:pointer;
+}
+.empty{
+  text-align:center;
+  padding:35px 10px;
+  color:#cbd5e1;
+}
+.shop-btn{
+  display:inline-block;
+  margin-top:15px;
+  background:#0284c7;
+  color:#fff;
+  text-decoration:none;
+  padding:11px 18px;
+  border-radius:7px;
+}
+button:active{transform:scale(.98)}
+@media(max-width:600px){
+  body{padding:10px}
+  header{padding:12px}
+  header h1{font-size:17px}
+  nav a{font-size:13px;margin-left:5px}
+  .cart-img{width:60px;height:60px}
+  .cart-item{gap:8px}
+  .del-btn{font-size:11px;padding:6px}
+}
 </style>
 </head>
+
 <body>
+<div class="container">
+
 <header>
   <h1>FA Digital Store</h1>
-  <nav><a href="index.html">Home</a><a href="shop.html">Shop</a><a href="admin.html">Admin 👑</a></nav>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="shop.html">Shop</a>
+    <a href="admin.html">Admin 👑</a>
+  </nav>
 </header>
+
 <h2>🛒 Shopping Cart & Checkout</h2>
+
 <div id="cartView"></div>
 
+</div>
+
 <script>
+
+function getCart(){
+  return JSON.parse(localStorage.getItem('cart')) || [];
+}
+
+function saveCart(cart){
+  localStorage.setItem('cart',JSON.stringify(cart));
+}
+
+function money(value){
+  return Number(value || 0).toLocaleString();
+}
+
 function render(){
-  let cart = JSON.parse(localStorage.getItem('cart')) || [];
-  let cView = document.getElementById('cartView');
+
+  const cart=getCart();
+  const view=document.getElementById('cartView');
+
   if(!cart.length){
-    cView.innerHTML = '<p>Your cart is empty! <a href="shop.html" style="color:#38bdf8">Go to Shop 🛍️</a></p>';
+    view.innerHTML=`
+      <div class="box empty">
+        <h3>🛒 Your cart is empty</h3>
+        <p>Add some products from our store.</p>
+        <a class="shop-btn" href="shop.html">Continue Shopping 🛍️</a>
+      </div>
+    `;
     return;
   }
-  let total = 0;
-  let rows = cart.map((item, i) => {
-    let p = typeof item.price === 'number' ? item.price : parseFloat(String(item.price).replace(/[^0-9.]/g,''))||0;
-    let q = item.quantity || 1;
-    total += p * q;
-    return `<tr><td>${item.title || item.name}</td><td>Rs. ${p.toLocaleString()}</td><td><button class="del-btn" onclick="del(${i})">Delete</button></td></tr>`;
+
+  let total=0;
+  let quantityTotal=0;
+
+  const items=cart.map((item,i)=>{
+
+    const price=Number(item.price)||0;
+    const qty=Math.max(1,Number(item.quantity)||1);
+
+    total+=price*qty;
+    quantityTotal+=qty;
+
+    const image=item.image || 'https://via.placeholder.com/100?text=Product';
+    const name=item.title || item.name || 'Product';
+
+    return `
+      <div class="cart-item">
+
+        <img
+          class="cart-img"
+          src="${image}"
+          alt="${name}"
+          onerror="this.src='https://via.placeholder.com/100?text=Product'"
+        >
+
+        <div class="item-info">
+          <div class="item-name">${name}</div>
+          <div class="item-price">Rs. ${money(price)}</div>
+
+          <div class="qty">
+            <button onclick="changeQty(${i},-1)">−</button>
+            <span>${qty}</span>
+            <button onclick="changeQty(${i},1)">+</button>
+          </div>
+        </div>
+
+        <button class="del-btn" onclick="del(${i})">
+          Delete
+        </button>
+
+      </div>
+    `;
+
   }).join('');
 
-  cView.innerHTML = `
+  view.innerHTML=`
+
     <div class="box">
-      <table><tr><th>Item</th><th>Price</th><th>Action</th></tr>${rows}</table>
-      <h3 style="color:#38bdf8">Total: Rs. ${total.toLocaleString()}</h3>
+
+      <h3>🛍️ Your Products</h3>
+
+      ${items}
+
+      <button
+        class="submit-btn clear-btn"
+        onclick="clearCart()">
+        🗑️ Clear Cart
+      </button>
+
     </div>
+
     <div class="box">
+
+      <h3>💰 Order Summary</h3>
+
+      <div class="summary">
+        <span>Total Items</span>
+        <strong>${quantityTotal}</strong>
+      </div>
+
+      <div class="summary">
+        <span>Subtotal</span>
+        <strong>Rs. ${money(total)}</strong>
+      </div>
+
+      <div class="summary">
+        <span>Delivery</span>
+        <strong>Free</strong>
+      </div>
+
+      <div class="summary grand-total">
+        <span>Total</span>
+        <strong>Rs. ${money(total)}</strong>
+      </div>
+
+    </div>
+
+    <div class="box">
+
       <h3>📋 Shipping Details</h3>
-      <form onsubmit="placeOrder(event, ${total})">
-        <input type="text" id="cName" required placeholder="Full Name">
-        <input type="tel" id="cPhone" required placeholder="Phone Number">
-        <textarea id="cAddr" rows="3" required placeholder="Full Address"></textarea>
-        <button type="submit">Confirm Order 🎉</button>
+
+      <form onsubmit="placeOrder(event,${total})">
+
+        <label>Full Name</label>
+        <input
+          type="text"
+          id="cName"
+          required
+          placeholder="Enter your full name">
+
+        <label>Phone Number</label>
+        <input
+          type="tel"
+          id="cPhone"
+          required
+          placeholder="03XXXXXXXXX">
+
+        <label>Full Address</label>
+        <textarea
+          id="cAddr"
+          rows="4"
+          required
+          placeholder="House / Street / Area / City"></textarea>
+
+        <button class="submit-btn" type="submit">
+          Confirm Order 🎉
+        </button>
+
       </form>
+
     </div>
   `;
 }
 
-function del(i){
-  let cart = JSON.parse(localStorage.getItem('cart')) || [];
-  cart.splice(i, 1);
-  localStorage.setItem('cart', JSON.stringify(cart));
+function changeQty(index,change){
+
+  const cart=getCart();
+
+  if(!cart[index]) return;
+
+  let qty=Number(cart[index].quantity)||1;
+
+  qty+=change;
+
+  if(qty<=0){
+    cart.splice(index,1);
+  }else{
+    cart[index].quantity=qty;
+  }
+
+  saveCart(cart);
   render();
 }
 
-async function placeOrder(e, total){
-  e.preventDefault();
-  let cart = JSON.parse(localStorage.getItem('cart')) || [];
-  let order = {
-    id: 'ORD-' + Math.floor(100000 + Math.random() * 900000),
-    date: new Date().toLocaleString(),
-    customer: {
-      name: document.getElementById('cName').value,
-      phone: document.getElementById('cPhone').value,
-      address: document.getElementById('cAddr').value
-    },
-    items: cart,
-    total: total,
-    status: 'Pending ⏳'
-  };
+function del(index){
 
-  try {
-    let res = await fetch('/api/orders', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(order)
-    });
-    if(res.ok){
-      localStorage.removeItem('cart');
-      alert('🎉 Order sent to Backend Server!');
-      window.location.href = 'admin.html';
-    }
-  } catch(err) {
-    alert('Failed to send order to server');
+  const cart=getCart();
+
+  if(!cart[index]) return;
+
+  cart.splice(index,1);
+
+  saveCart(cart);
+  render();
+}
+
+function clearCart(){
+
+  if(!getCart().length) return;
+
+  if(confirm('Are you sure you want to clear your cart?')){
+    localStorage.removeItem('cart');
+    render();
   }
 }
 
-window.onload = render;
+async function placeOrder(e,total){
+
+  e.preventDefault();
+
+  const cart=getCart();
+
+  if(!cart.length){
+    alert('Your cart is empty!');
+    return;
+  }
+
+  const order={
+    id:'ORD-'+Math.floor(100000+Math.random()*900000),
+    date:new Date().toLocaleString(),
+
+    customer:{
+      name:document.getElementById('cName').value.trim(),
+      phone:document.getElementById('cPhone').value.trim(),
+      address:document.getElementById('cAddr').value.trim()
+    },
+
+    items:cart,
+    total:Number(total),
+    status:'Pending ⏳'
+  };
+
+  try{
+
+    const res=await fetch('/api/orders',{
+      method:'POST',
+      headers:{
+        'Content-Type':'application/json'
+      },
+      body:JSON.stringify(order)
+    });
+
+    if(!res.ok){
+      throw new Error('Order failed');
+    }
+
+    localStorage.removeItem('cart');
+
+    alert(
+      '🎉 Order placed successfully!\\n\\nOrder ID: '+order.id
+    );
+
+    sessionStorage.setItem('lastOrder', JSON.stringify(order));
+    window.location.href='order-success.html';
+
+  }catch(err){
+
+    console.error(err);
+
+    alert(
+      '❌ Failed to send order to server. Please try again.'
+    );
+
+  }
+}
+
+window.onload=render;
+
 </script>
 </body>
 </html>

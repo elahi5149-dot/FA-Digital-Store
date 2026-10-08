@@ -1,109 +1,329 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Admin Dashboard - FA Digital Store</title>
 <style>
-body{font-family:sans-serif;background:#0f172a;color:#fff;padding:20px;max-width:800px;margin:auto}
-header{display:flex;justify-content:space-between;align-items:center;background:#1e293b;padding:15px;border-radius:8px;margin-bottom:20px}
-header h1{margin:0;color:#38bdf8;font-size:18px}
-nav a{color:#cbd5e1;text-decoration:none;margin-left:10px;font-weight:bold}
-.stats{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-bottom:20px}
-.card{background:#1e293b;padding:15px;border-radius:8px;text-align:center}
-.card h2{margin:0;font-size:28px;color:#38bdf8}
-.btn-clear{background:#ef4444;color:#fff;width:100%;padding:10px;border:0;border-radius:6px;font-weight:bold;margin-bottom:20px;cursor:pointer}
-.order-card{background:#1e293b;border-left:4px solid #f59e0b;padding:15px;border-radius:8px;margin-bottom:15px}
-.order-header{display:flex;justify-content:space-between;color:#cbd5e1;font-size:14px;border-bottom:1px solid #334155;padding-bottom:8px;margin-bottom:10px}
-.cust-info{background:#0f172a;padding:10px;border-radius:6px;margin-bottom:10px;font-size:14px}
-.items-table{width:100%;border-collapse:collapse;font-size:13px;margin-bottom:10px}
-.items-table td,.items-table th{padding:6px;border-bottom:1px solid #334155;text-align:left}
-.actions{display:flex;justify-content:space-between;align-items:center}
-.status-btn{padding:6px 12px;border:0;border-radius:4px;font-weight:bold;cursor:pointer}
-.status-pending{background:#f59e0b;color:#000}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#0f172a;color:#f8fafc;padding:16px}
+.container{max-width:1100px;margin:auto}
+header{background:#1e293b;padding:18px;border-radius:14px;margin-bottom:18px;display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap}
+.logo{font-size:21px;font-weight:bold;color:#38bdf8}
+nav a{color:#cbd5e1;text-decoration:none;margin-left:14px;font-weight:bold;font-size:14px}
+nav a:hover{color:#38bdf8}
+
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:18px}
+.card{background:#1e293b;padding:18px;border-radius:14px;text-align:center;border:1px solid #334155}
+.card .icon{font-size:25px}
+.card h2{margin:7px 0 3px;color:#38bdf8;font-size:25px}
+.card p{margin:0;color:#94a3b8;font-size:13px}
+
+.toolbar{background:#1e293b;padding:14px;border-radius:14px;margin-bottom:18px;display:flex;gap:10px;flex-wrap:wrap}
+.search{flex:1;min-width:200px;background:#0f172a;border:1px solid #475569;color:#fff;padding:12px;border-radius:9px;outline:none}
+.search:focus{border-color:#38bdf8}
+.btn{border:0;border-radius:9px;padding:11px 15px;font-weight:bold;cursor:pointer}
+.btn-refresh{background:#38bdf8;color:#082f49}
+.btn-clear{background:#ef4444;color:#fff}
+.btn:hover{opacity:.85}
+
+.section-title{font-size:18px;margin:5px 0 14px;color:#e2e8f0}
+.order-card{background:#1e293b;border:1px solid #334155;border-left:5px solid #f59e0b;padding:16px;border-radius:14px;margin-bottom:14px}
+.order-card.completed{border-left-color:#10b981}
+.order-header{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;border-bottom:1px solid #334155;padding-bottom:11px;margin-bottom:12px}
+.order-id{color:#38bdf8;font-weight:bold}
+.date{color:#94a3b8;font-size:13px}
+
+.cust-info{background:#0f172a;padding:12px;border-radius:10px;margin-bottom:12px;line-height:1.8;font-size:14px;color:#cbd5e1}
+.cust-info strong{color:#f8fafc}
+
+.items-table{width:100%;border-collapse:collapse;margin-bottom:12px;font-size:14px}
+.items-table th{color:#94a3b8;font-weight:bold}
+.items-table td,.items-table th{padding:9px 6px;border-bottom:1px solid #334155;text-align:left}
+.items-table td:last-child,.items-table th:last-child{text-align:right}
+
+.actions{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.total{font-size:17px;color:#f8fafc}
+.action-buttons{display:flex;gap:7px}
+.status-btn,.del-btn{border:0;border-radius:7px;padding:8px 12px;font-weight:bold;cursor:pointer}
+.status-pending{background:#f59e0b;color:#111827}
 .status-completed{background:#10b981;color:#fff}
-.del-btn{background:#ef4444;color:#fff;padding:6px 12px;border:0;border-radius:4px;cursor:pointer}
+.del-btn{background:#ef4444;color:#fff}
+
+.empty{text-align:center;background:#1e293b;padding:35px;border-radius:14px;color:#94a3b8}
+.error{color:#f87171;text-align:center;padding:20px}
+
+@media(max-width:800px){
+.stats{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:500px){
+body{padding:10px}
+header{padding:14px}
+.logo{font-size:18px}
+nav{width:100%;display:flex;justify-content:space-between}
+nav a{margin:0;font-size:13px}
+.stats{grid-template-columns:repeat(2,1fr);gap:8px}
+.card{padding:13px}
+.card h2{font-size:21px}
+.toolbar{padding:10px}
+.search{min-width:100%;width:100%}
+.btn{flex:1}
+.order-card{padding:12px}
+.items-table{font-size:12px}
+.actions{align-items:stretch}
+.total{width:100%}
+.action-buttons{width:100%}
+.status-btn,.del-btn{flex:1}
+}
 </style>
 </head>
+
 <body>
+<div class="container">
+
 <header>
-  <h1>FA Store - Admin Panel 👑</h1>
-  <nav><a href="index.html">Home</a><a href="shop.html">Shop</a><a href="cart.html">Cart</a></nav>
+  <div class="logo">👑 FA Digital Store Admin</div>
+  <nav>
+    <a href="index.html">🏠 Home</a>
+    <a href="shop.html">🛒 Shop</a>
+    <a href="cart.html">🛍️ Cart</a>
+  </nav>
 </header>
 
 <div class="stats">
-  <div class="card"><h2 id="totalOrders">0</h2><p>Total Orders</p></div>
-  <div class="card"><h2 id="totalRevenue">Rs. 0</h2><p>Total Revenue</p></div>
+  <div class="card">
+    <div class="icon">📦</div>
+    <h2 id="totalOrders">0</h2>
+    <p>Total Orders</p>
+  </div>
+  <div class="card">
+    <div class="icon">💰</div>
+    <h2 id="totalRevenue">Rs. 0</h2>
+    <p>Total Revenue</p>
+  </div>
+  <div class="card">
+    <div class="icon">⏳</div>
+    <h2 id="pendingOrders">0</h2>
+    <p>Pending</p>
+  </div>
+  <div class="card">
+    <div class="icon">✅</div>
+    <h2 id="completedOrders">0</h2>
+    <p>Completed</p>
+  </div>
 </div>
 
-<button class="btn-clear" onclick="clearAll()">🗑️ Clear All Orders</button>
+<div class="toolbar">
+  <input id="searchBox" class="search" type="search"
+    placeholder="🔍 Search order, customer or phone..."
+    oninput="renderOrders()">
+  <button class="btn btn-refresh" onclick="loadOrders()">🔄 Refresh</button>
+  <button class="btn btn-clear" onclick="clearAll()">🗑️ Clear All</button>
+</div>
 
-<div id="ordersList">Loading orders from server...</div>
+<h2 class="section-title">📋 Customer Orders</h2>
+<div id="ordersList">Loading orders...</div>
+
+</div>
 
 <script>
+let allOrders = [];
+
 async function loadOrders(){
-  try {
-    let res = await fetch('/api/orders');
-    let orders = await res.json();
-    
-    document.getElementById('totalOrders').innerText = orders.length;
-    let rev = orders.reduce((sum, o) => sum + (o.total || 0), 0);
-    document.getElementById('totalRevenue').innerText = 'Rs. ' + rev.toLocaleString();
+  const list = document.getElementById('ordersList');
+  list.innerHTML = '<div class="empty">⏳ Loading orders...</div>';
 
-    let list = document.getElementById('ordersList');
-    if(!orders.length){
-      list.innerHTML = '<p style="text-align:center">No orders received yet. 📬</p>';
-      return;
-    }
+  try{
+    const res = await fetch('/api/orders');
+    if(!res.ok) throw new Error('Server error');
 
-    list.innerHTML = orders.map(o => `
-      <div class="order-card" style="border-left-color: ${o.status.includes('Completed') ? '#10b981' : '#f59e0b'}">
-        <div class="order-header">
-          <strong style="color:#38bdf8">${o.id}</strong>
-          <span>${o.date}</span>
-        </div>
-        <div class="cust-info">
-          👤 <strong>Customer:</strong> ${o.customer.name}<br>
-          📞 <strong>Phone:</strong> ${o.customer.phone}<br>
-          📍 <strong>Address:</strong> ${o.customer.address}
-        </div>
-        <table class="items-table">
-          <tr><th>Item</th><th>Qty</th><th>Price</th></tr>
-          ${o.items.map(i => `<tr><td>${i.title || i.name}</td><td>${i.quantity || 1}x</td><td>Rs. ${(i.price || 0).toLocaleString()}</td></tr>`).join('')}
-        </table>
-        <div class="actions">
-          <strong>Total: Rs. ${(o.total || 0).toLocaleString()}</strong>
-          <div>
-            <button class="status-btn ${o.status.includes('Completed') ? 'status-completed' : 'status-pending'}" onclick="toggleStatus('${o.id}')">${o.status}</button>
-            <button class="del-btn" onclick="delOrder('${o.id}')">Delete</button>
-          </div>
-        </div>
-      </div>
-    `).join('');
-  } catch(e) {
-    document.getElementById('ordersList').innerHTML = '<p style="color:#ef4444">Error loading orders from server.</p>';
+    allOrders = await res.json();
+
+    updateStats();
+    renderOrders();
+  }catch(e){
+    list.innerHTML = '<div class="error">❌ Error loading orders from server.</div>';
   }
 }
 
+function updateStats(){
+  const total = allOrders.length;
+
+  const completed = allOrders.filter(o =>
+    String(o.status || '').toLowerCase().includes('completed')
+  ).length;
+
+  const pending = total - completed;
+
+  const revenue = allOrders.reduce((sum,o) =>
+    sum + Number(o.total || 0),0
+  );
+
+  document.getElementById('totalOrders').innerText = total;
+  document.getElementById('totalRevenue').innerText =
+    'Rs. ' + revenue.toLocaleString();
+  document.getElementById('pendingOrders').innerText = pending;
+  document.getElementById('completedOrders').innerText = completed;
+}
+
+function renderOrders(){
+  const list = document.getElementById('ordersList');
+  const search = document.getElementById('searchBox').value
+    .trim().toLowerCase();
+
+  const orders = allOrders.filter(o => {
+    const customer = o.customer || {};
+
+    const text = [
+      o.id,
+      o.date,
+      customer.name,
+      customer.phone,
+      customer.address
+    ].join(' ').toLowerCase();
+
+    return text.includes(search);
+  });
+
+  if(!orders.length){
+    list.innerHTML =
+      '<div class="empty">📭 No matching orders found.</div>';
+    return;
+  }
+
+  list.innerHTML = orders.map(o => {
+    const customer = o.customer || {};
+    const status = String(o.status || 'Pending');
+    const completed = status.toLowerCase().includes('completed');
+
+    const items = Array.isArray(o.items) ? o.items : [];
+
+    return `
+      <div class="order-card ${completed ? 'completed' : ''}">
+
+        <div class="order-header">
+          <span class="order-id">${escapeHtml(o.id || 'Order')}</span>
+          <span class="date">📅 ${escapeHtml(o.date || '')}</span>
+        </div>
+
+        <div class="cust-info">
+          👤 <strong>Customer:</strong>
+          ${escapeHtml(customer.name || 'N/A')}<br>
+
+          📞 <strong>Phone:</strong>
+          ${escapeHtml(customer.phone || 'N/A')}<br>
+
+          📍 <strong>Address:</strong>
+          ${escapeHtml(customer.address || 'N/A')}
+        </div>
+
+        <table class="items-table">
+          <tr>
+            <th>Product</th>
+            <th>Qty</th>
+            <th>Price</th>
+          </tr>
+
+          ${items.map(i => `
+            <tr>
+              <td>${escapeHtml(i.title || i.name || 'Product')}</td>
+              <td>${Number(i.quantity || 1)}x</td>
+              <td>Rs. ${Number(i.price || 0).toLocaleString()}</td>
+            </tr>
+          `).join('')}
+        </table>
+
+        <div class="actions">
+          <strong class="total">
+            Total: Rs. ${Number(o.total || 0).toLocaleString()}
+          </strong>
+
+          <div class="action-buttons">
+            <button
+              class="status-btn ${completed ? 'status-completed' : 'status-pending'}"
+              onclick="toggleStatus('${safeId(o.id)}')">
+              ${completed ? '✅ Completed' : '⏳ Pending'}
+            </button>
+
+            <button
+              class="del-btn"
+              onclick="delOrder('${safeId(o.id)}')">
+              🗑️ Delete
+            </button>
+          </div>
+        </div>
+
+      </div>
+    `;
+  }).join('');
+}
+
+function escapeHtml(value){
+  return String(value)
+    .replace(/&/g,'&amp;')
+    .replace(/</g,'&lt;')
+    .replace(/>/g,'&gt;')
+    .replace(/"/g,'&quot;')
+    .replace(/'/g,'&#039;');
+}
+
+function safeId(value){
+  return String(value || '').replace(/'/g,"\\'");
+}
+
 async function toggleStatus(id){
-  await fetch(`/api/orders/${id}/status`, { method: 'PUT' });
-  loadOrders();
+  try{
+    const res = await fetch(
+      `/api/orders/${encodeURIComponent(id)}/status`,
+      {method:'PUT'}
+    );
+
+    if(!res.ok) throw new Error('Status update failed');
+
+    await loadOrders();
+  }catch(e){
+    alert('❌ Could not update order status.');
+  }
 }
 
 async function delOrder(id){
-  if(confirm('Delete this order?')){
-    await fetch(`/api/orders/${id}`, { method: 'DELETE' });
-    loadOrders();
+  if(!confirm('Delete this order permanently?')) return;
+
+  try{
+    const res = await fetch(
+      `/api/orders/${encodeURIComponent(id)}`,
+      {method:'DELETE'}
+    );
+
+    if(!res.ok) throw new Error('Delete failed');
+
+    await loadOrders();
+  }catch(e){
+    alert('❌ Could not delete order.');
   }
 }
 
 async function clearAll(){
-  if(confirm('Clear ALL orders permanently from backend?')){
-    await fetch('/api/orders', { method: 'DELETE' });
-    loadOrders();
+  if(!allOrders.length){
+    alert('There are no orders to clear.');
+    return;
+  }
+
+  if(!confirm('⚠️ Delete ALL orders permanently?')) return;
+
+  try{
+    const res = await fetch('/api/orders',{method:'DELETE'});
+
+    if(!res.ok) throw new Error('Clear failed');
+
+    await loadOrders();
+  }catch(e){
+    alert('❌ Could not clear orders.');
   }
 }
 
 window.onload = loadOrders;
 </script>
+
 </body>
 </html>

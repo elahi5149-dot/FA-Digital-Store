@@ -3,60 +3,700 @@
     "id": 1,
     "name": "Wireless Earbuds",
     "price": 2999,
-    "image": "https://placehold.co/600x600/png?text=Wireless%20Earbuds"
+    "image": "https://images.unsplash.com/photo-1606220945770-b5b6c2c55bf1?auto=format&fit=crop&w=600&q=80",
+    "category": "Electronics"
   },
   {
     "id": 2,
     "name": "Smart Watch",
     "price": 4999,
-    "image": "https://placehold.co/600x600/png?text=Smart%20Watch"
+    "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=600&q=80",
+    "category": "Electronics"
   },
   {
     "id": 3,
     "name": "Men's Winter Coat",
     "price": 7999,
-    "image": "https://placehold.co/600x600/png?text=Men%27s%20Winter%20Coat"
+    "image": "https://images.unsplash.com/photo-1544022613-e87ca75a784a?auto=format&fit=crop&w=600&q=80",
+    "category": "Men"
   },
   {
     "id": 4,
     "name": "Men's Casual Shoes",
     "price": 4999,
-    "image": "https://placehold.co/600x600/png?text=Men%27s%20Casual%20Shoes"
+    "image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=600&q=80",
+    "category": "Men"
   },
   {
     "id": 5,
     "name": "Men's Wool Sweater",
     "price": 3999,
-    "image": "https://placehold.co/600x600/png?text=Men%27s%20Wool%20Sweater"
+    "image": "https://images.unsplash.com/photo-1611312449408-fcece27cdbb7?auto=format&fit=crop&w=600&q=80",
+    "category": "Men"
   },
   {
     "id": 6,
     "name": "Men's Hoodie",
     "price": 3499,
-    "image": "https://placehold.co/600x600/png?text=Men%27s%20Hoodie"
+    "image": "https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&w=600&q=80",
+    "category": "Men"
   },
   {
     "id": 7,
     "name": "Men's Jeans",
     "price": 4499,
-    "image": "https://placehold.co/600x600/png?text=Men%27s%20Jeans"
+    "image": "https://images.unsplash.com/photo-1542272604-787c3835535d?auto=format&fit=crop&w=600&q=80",
+    "category": "Men"
   },
   {
     "id": 8,
     "name": "Men's T-Shirt",
     "price": 1999,
-    "image": "https://placehold.co/600x600/png?text=Men%27s%20T-Shirt"
+    "image": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=600&q=80",
+    "category": "Men"
   },
   {
     "id": 9,
     "name": "Men's Tracksuit",
     "price": 5499,
-    "image": "https://placehold.co/600x600/png?text=Men%27s%20Tracksuit"
+    "image": "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=600&q=80",
+    "category": "Men"
   },
   {
     "id": 10,
     "name": "Men's Casual Shirt",
     "price": 2999,
-    "image": "https://placehold.co/600x600/png?text=Men%27s%20Casual%20Shirt"
+    "image": "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=600&q=80",
+    "category": "Men"
+  },
+  {
+    "id": 11,
+    "name": "Women's Winter Coat",
+    "price": 6999,
+    "category": "Women",
+    "image": "https://images.unsplash.com/photo-1544022613-e87ca75a784a?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": 12,
+    "name": "Women's Casual Shoes",
+    "price": 4499,
+    "category": "Women",
+    "image": "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": 13,
+    "name": "Women's Handbag",
+    "price": 3999,
+    "category": "Women",
+    "image": "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": 14,
+    "name": "Women's Sweater",
+    "price": 3499,
+    "category": "Women",
+    "image": "https://images.unsplash.com/photo-1434389677669-e08b4cac3105?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": 15,
+    "name": "Women's Hoodie",
+    "price": 3299,
+    "category": "Women",
+    "image": "https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": 16,
+    "name": "Women's Casual T-Shirt",
+    "price": 1999,
+    "category": "Women",
+    "image": "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": 17,
+    "name": "Kids Winter Jacket",
+    "price": 3999,
+    "category": "Kids",
+    "image": "https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": 18,
+    "name": "Kids Casual Shoes",
+    "price": 2999,
+    "category": "Kids",
+    "image": "https://images.unsplash.com/photo-1514989940723-e8e51635b782?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": 19,
+    "name": "Kids Hoodie",
+    "price": 2499,
+    "category": "Kids",
+    "image": "https://images.unsplash.com/photo-1503919545889-aef636e10ad4?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": 20,
+    "name": "Kids T-Shirt",
+    "price": 1499,
+    "category": "Kids",
+    "image": "https://images.unsplash.com/photo-1503919545889-aef636e10ad4?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": 21,
+    "name": "Kids Tracksuit",
+    "price": 2999,
+    "category": "Kids",
+    "image": "https://images.unsplash.com/photo-1519457431-44ccd64a579b?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": 22,
+    "name": "Kids Winter Sweater",
+    "price": 2299,
+    "category": "Kids",
+    "image": "https://images.unsplash.com/photo-1519457431-44ccd64a579b?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": 23,
+    "name": "Kids Casual T-Shirt",
+    "price": 999,
+    "category": "Kids",
+    "image": "https://images.unsplash.com/photo-1503919545889-aef636e10ad4?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": 24,
+    "name": "Kids Denim Jeans",
+    "price": 1899,
+    "category": "Kids",
+    "image": "https://images.unsplash.com/photo-1519457431-44ccd64a579b?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": 25,
+    "name": "Kids Hoodie",
+    "price": 1799,
+    "category": "Kids",
+    "image": "https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": 26,
+    "name": "Kids Party Dress",
+    "price": 2499,
+    "category": "Kids",
+    "image": "https://images.unsplash.com/photo-1503919545889-aef636e10ad4?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": 27,
+    "name": "Kids Sneakers",
+    "price": 2199,
+    "category": "Kids",
+    "image": "https://images.unsplash.com/photo-1514989940723-e8e51635b782?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": 28,
+    "name": "Kids Fashion Cap",
+    "price": 699,
+    "category": "Kids",
+    "image": "https://images.unsplash.com/photo-1521369909029-2afed882baee?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": 29,
+    "name": "Kids Winter Jacket",
+    "price": 2899,
+    "category": "Kids",
+    "image": "https://images.unsplash.com/photo-1519457431-44ccd64a579b?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": 30,
+    "name": "Kids 3-Piece Outfit Set",
+    "price": 2999,
+    "category": "Kids",
+    "image": "https://img.tkmaxx.com/medias/41239376-large-wl-01.jpg?context=bWFzdGVyfHByb2R1Y3QtaW1hZ2VzfDE2MjI5NXxpbWFnZS9qcGVnfGFHUXhMMmhrTlM4eE5qQTNORGs0TURBMk5UTXhNQzgwTVRJek9UTTNObDlzWVhKblpWOTNiRjh3TVM1cWNHY3w0ZDIxMGIwMjU1YjEyYjlhNTYxYzI3YzU0ZjMyNWU5MjA1MjEwZjE2NjgxYTRmYzk5MmEwMzQ3OWFlNGRjNjcz"
+  },
+  {
+    "id": 31,
+    "name": "Soft Teddy Bear",
+    "price": 1299,
+    "category": "Toys",
+    "image": "https://images.unsplash.com/photo-1559454403-b8fb88521f11?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": 32,
+    "name": "Colorful Building Blocks",
+    "price": 1599,
+    "category": "Toys",
+    "image": "https://images.unsplash.com/photo-1587654780291-39c9404d746b?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": 33,
+    "name": "Remote Control Toy Car",
+    "price": 2299,
+    "category": "Toys",
+    "image": "https://images.unsplash.com/photo-1594787318286-3d835c1d207f?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": 34,
+    "name": "Kids Doll",
+    "price": 1399,
+    "category": "Toys",
+    "image": "https://images.unsplash.com/photo-1599623560574-39d485900c95?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": 35,
+    "name": "Educational Puzzle Set",
+    "price": 999,
+    "category": "Toys",
+    "image": "https://images.unsplash.com/photo-1606503153255-59d8b8b8213a?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": 36,
+    "name": "Kids Drawing & Art Kit",
+    "price": 1199,
+    "category": "Toys",
+    "image": "https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": 37,
+    "name": "Toy Kitchen Set",
+    "price": 2499,
+    "category": "Toys",
+    "image": "https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": 38,
+    "name": "Magnetic Building Tiles",
+    "price": 1999,
+    "category": "Toys",
+    "image": "https://images.unsplash.com/photo-1596464716127-f2a82984de30?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": 39,
+    "name": "Women's Casual Dress",
+    "price": 2999,
+    "category": "Women",
+    "image": "https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": 40,
+    "name": "Women's Elegant Dress",
+    "price": 3999,
+    "category": "Women",
+    "image": "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": 41,
+    "name": "Women's Handbag",
+    "price": 2499,
+    "category": "Women",
+    "image": "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": 42,
+    "name": "Women's Sneakers",
+    "price": 2799,
+    "category": "Women",
+    "image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": 43,
+    "name": "Women's Heels",
+    "price": 2999,
+    "category": "Women",
+    "image": "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": 44,
+    "name": "Women's Casual Blouse",
+    "price": 1899,
+    "category": "Women",
+    "image": "https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": 45,
+    "name": "Women's Fashion Jacket",
+    "price": 3499,
+    "category": "Women",
+    "image": "https://images.unsplash.com/photo-1544022613-e87ca75a784a?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": 46,
+    "name": "Women's Abaya",
+    "price": 3299,
+    "category": "Women",
+    "image": "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": 47,
+    "name": "Women's Sunglasses",
+    "price": 999,
+    "category": "Women",
+    "image": "https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": 48,
+    "name": "Women's Fashion Accessories Set",
+    "price": 1499,
+    "category": "Women",
+    "image": "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": 49,
+    "name": "Wireless Earbuds",
+    "price": 2499,
+    "category": "Electronics",
+    "image": "https://images.unsplash.com/photo-1606220945770-b5b6c2c55bf1?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": 50,
+    "name": "Bluetooth Speaker",
+    "price": 2999,
+    "category": "Electronics",
+    "image": "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": 51,
+    "name": "Smart Watch",
+    "price": 3999,
+    "category": "Electronics",
+    "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": 52,
+    "name": "Power Bank 20000mAh",
+    "price": 2999,
+    "category": "Electronics",
+    "image": "https://images.unsplash.com/photo-1609592424724-5b4b8e3c7e9b?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": 53,
+    "name": "USB-C Fast Charger",
+    "price": 1799,
+    "category": "Electronics",
+    "image": "https://images.unsplash.com/photo-1583863788434-e58a36330cf0?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": 54,
+    "name": "Wireless Mouse",
+    "price": 1499,
+    "category": "Electronics",
+    "image": "https://images.unsplash.com/photo-1527814050087-3793815479db?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": 55,
+    "name": "Wireless Keyboard",
+    "price": 2499,
+    "category": "Electronics",
+    "image": "https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": 56,
+    "name": "Mobile Phone Holder",
+    "price": 899,
+    "category": "Electronics",
+    "image": "https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": 57,
+    "name": "LED Ring Light",
+    "price": 2199,
+    "category": "Electronics",
+    "image": "https://images.unsplash.com/photo-1593697821252-0c9137d9fc45?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": 58,
+    "name": "USB-C Charging Cable",
+    "price": 699,
+    "category": "Electronics",
+    "image": "https://images.unsplash.com/photo-1587033411391-5d9e51cce126?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": 59,
+    "name": "Portable Mini Fan",
+    "price": 1299,
+    "category": "Electronics",
+    "image": "https://images.unsplash.com/photo-1593642532400-2682810df593?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": 60,
+    "name": "LED Desk Lamp",
+    "price": 1999,
+    "category": "Electronics",
+    "image": "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=600&q=80"
+  },
+  {
+    "id": 61,
+    "name": "Men Classic Sneakers",
+    "category": "Men",
+    "price": 3499,
+    "image": "https://www.ndure.com/cdn/shop/files/2_e239c44c-b51b-4a6f-98c7-1c8d8ba1fa1e.jpg?v=1758089094"
+  },
+  {
+    "id": 62,
+    "name": "Men Running Shoes",
+    "category": "Men",
+    "price": 4299,
+    "image": "https://sreeleathersonline.com/cdn/shop/files/DSC02719.png?v=1776773472"
+  },
+  {
+    "id": 63,
+    "name": "Men Casual Shoes",
+    "category": "Men",
+    "price": 3899,
+    "image": "https://i5.walmartimages.com/seo/Ierhent-Shoes-for-Men-Men-s-Fashion-Sneakers-Retro-Simple-Casual-Shoes-for-Men-Grey-40_2d94e650-c578-4012-9b73-1972e4713dd8.89642e118c266d421ee8151058c67f46.jpeg"
+  },
+  {
+    "id": 64,
+    "name": "Men Formal Leather Shoes",
+    "category": "Men",
+    "price": 5499,
+    "image": "https://menssuitwarehouse.com.au/cdn/shop/files/aquila-porter-mens-chocolate-leather-boat-shoe.png?v=1696311046"
+  },
+  {
+    "id": 65,
+    "name": "Men Sports Shoes",
+    "category": "Men",
+    "price": 4599,
+    "image": "https://www.ndure.com/cdn/shop/files/2_e239c44c-b51b-4a6f-98c7-1c8d8ba1fa1e.jpg?v=1758089094"
+  },
+  {
+    "id": 66,
+    "name": "Men Loafers",
+    "category": "Men",
+    "price": 3999,
+    "image": "https://menssuitwarehouse.com.au/cdn/shop/files/aquila-porter-mens-chocolate-leather-boat-shoe.png?v=1696311046"
+  },
+  {
+    "id": 67,
+    "name": "Men Walking Shoes",
+    "category": "Men",
+    "price": 3699,
+    "image": "https://www.ndure.com/cdn/shop/files/2_e239c44c-b51b-4a6f-98c7-1c8d8ba1fa1e.jpg?v=1758089094"
+  },
+  {
+    "id": 68,
+    "name": "Men Premium Sneakers",
+    "category": "Men",
+    "price": 4999,
+    "image": "https://sreeleathersonline.com/cdn/shop/files/DSC02719.png?v=1776773472"
+  },
+  {
+    "id": 69,
+    "name": "Women Fashion Sneakers",
+    "category": "Women",
+    "price": 3599,
+    "image": "https://easyspirit.com/cdn/shop/files/e0bb931d0542f8eed6c3c2998dd0456cb70e09f3.jpg?v=1772639367&width=1600"
+  },
+  {
+    "id": 70,
+    "name": "Women Casual Shoes",
+    "category": "Women",
+    "price": 3799,
+    "image": "https://easyspirit.com/cdn/shop/files/e0bb931d0542f8eed6c3c2998dd0456cb70e09f3.jpg?v=1772639367&width=1600"
+  },
+  {
+    "id": 71,
+    "name": "Women High Heels",
+    "category": "Women",
+    "price": 4299,
+    "image": "https://static.ticimax.cloud/72015/uploads/urunresimleri/kadin-gumus-klasik-topuklu-ayakkabi-117786.jpg"
+  },
+  {
+    "id": 72,
+    "name": "Women Flat Shoes",
+    "category": "Women",
+    "price": 2999,
+    "image": "https://weide.cl/cdn/shop/files/P-GH81-Negro-3.webp?v=1691909308&width=1500"
+  },
+  {
+    "id": 73,
+    "name": "Women Sandals",
+    "category": "Women",
+    "price": 2499,
+    "image": "https://www.ndure.ae/cdn/shop/files/1_6f03e7b2-c7ce-4676-8bf9-7fb66ce81b35.jpg?v=1744186486"
+  },
+  {
+    "id": 74,
+    "name": "Women Party Heels",
+    "category": "Women",
+    "price": 4699,
+    "image": "https://d3fvqmu2193zmz.cloudfront.net/items_2/uid_commerces.1/uid_items_2.2025090219434560142/1500x1500/697D38E936D6B-Calzado-Fiesta-Dama-F-Whitney.webp"
+  },
+  {
+    "id": 75,
+    "name": "Kids School Shoes",
+    "category": "Kids",
+    "price": 2299,
+    "image": "https://static-01.daraz.com.bd/p/0cf56bb0fd96eb26223aa4ae06cb712d.jpg"
+  },
+  {
+    "id": 76,
+    "name": "Kids Sneakers",
+    "category": "Kids",
+    "price": 2599,
+    "image": "https://twolittlefeet.sg/cdn/shop/products/SK22172-BU-2.jpg?v=1666430465"
+  },
+  {
+    "id": 77,
+    "name": "Kids Sports Shoes",
+    "category": "Kids",
+    "price": 2799,
+    "image": "https://www.batabd.com/cdn/shop/files/1212917_2_1024x1024.jpg?v=1773211955"
+  },
+  {
+    "id": 78,
+    "name": "Kids Casual Shoes",
+    "category": "Kids",
+    "price": 2399,
+    "image": "https://twolittlefeet.sg/cdn/shop/products/SK22172-BU-2.jpg?v=1666430465"
+  },
+  {
+    "id": 79,
+    "name": "Kids Sandals",
+    "category": "Kids",
+    "price": 1899,
+    "image": "https://justshoesforkids.com/cdn/shop/files/8086FieldGround_LEMONNACARDOBLANCOCANDY_1.jpg?v=1774469269"
+  },
+  {
+    "id": 80,
+    "name": "Kids Light-Up Sneakers",
+    "category": "Kids",
+    "price": 3199,
+    "image": "https://twolittlefeet.sg/cdn/shop/products/SK22172-BU-2.jpg?v=1666430465"
+  },
+  {
+    "id": 81,
+    "name": "Women Floral Summer Dress",
+    "category": "Women",
+    "price": 3499,
+    "image": "https://north-muse.com/cdn/shop/files/emmelina-10012b-4b_827b49f0-95c2-4b4c-917c-2f1087dc9645.jpg?v=1747377798"
+  },
+  {
+    "id": 82,
+    "name": "Women Casual Cotton Dress",
+    "category": "Women",
+    "price": 2999,
+    "image": "https://m.media-amazon.com/images/I/519F0p8gcML.jpg"
+  },
+  {
+    "id": 83,
+    "name": "Women Elegant Party Dress",
+    "category": "Women",
+    "price": 4999,
+    "image": "https://target.scene7.com/is/image/Target/GUEST_c09881eb-8700-4868-a60a-2aee9f425953"
+  },
+  {
+    "id": 84,
+    "name": "Women Casual Top",
+    "category": "Women",
+    "price": 1999,
+    "image": "https://cdn.prod.website-files.com/5ebb1b2c07f0f111e4ac241c/62d86ae1e374e54e64d084e8_3ClUEY6dkpIrnynudkhgpUogHennYB26ZReFDFchkUPuTHTZiWvLpOyBCD4Qr_5uYoeGqr_wIQ7AktYiYFgLaZyMHyzsseIacFRSGW4m_LS_zoTD4ass-f_QEzvH9t2uWiPecnc_yHfK4C13p4h4LQ.png"
+  },
+  {
+    "id": 85,
+    "name": "Women Premium Blouse",
+    "category": "Women",
+    "price": 2499,
+    "image": "https://images.rawpixel.com/image_social_square/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDI1LTA5L3NyLWltYWdlLTA0MDcyNS1wYTMtcy0zODItbWZheGp3eWsuanBn.jpg"
+  },
+  {
+    "id": 86,
+    "name": "Women Denim Jeans",
+    "category": "Women",
+    "price": 3299,
+    "image": "https://img.yec.tw/zp/MerchandiseImages/A080073DFE-SP-16703124.jpg"
+  },
+  {
+    "id": 87,
+    "name": "Women Casual Trousers",
+    "category": "Women",
+    "price": 2899,
+    "image": "https://media.arket.com/assets/006/2a/9a/2a9a38089cefe796262b25510778532b55663abf_xl-1.jpg"
+  },
+  {
+    "id": 88,
+    "name": "Women Winter Jacket",
+    "category": "Women",
+    "price": 5499,
+    "image": "https://killtec.pl/sites/default/files/galerie/35619_811.jpg"
+  },
+  {
+    "id": 89,
+    "name": "Women Handbag",
+    "category": "Women",
+    "price": 3999,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/9/95/Handbag%2C_Women%27s_%2848708258183%29.jpg"
+  },
+  {
+    "id": 90,
+    "name": "Women Crossbody Bag",
+    "category": "Women",
+    "price": 2999,
+    "image": "https://di2ponv0v5otw.cloudfront.net/posts/2024/10/03/66ff0db9142ad47eb0491ff5/m_66ff0e0d0e51725ca86a5320.jpg"
+  },
+  {
+    "id": 91,
+    "name": "Women Fashion Sunglasses",
+    "category": "Women",
+    "price": 1799,
+    "image": "https://down-th.img.susercontent.com/file/th-11134207-7r98w-lzvs633icqzt06"
+  },
+  {
+    "id": 92,
+    "name": "Women Classic Wrist Watch",
+    "category": "Women",
+    "price": 2499,
+    "image": "https://cdn.prod.website-files.com/5e593fb060cf877cf875dd1f/661fb609d4e88d2b50544408_6468f3affb8cc719a300261f_premiumwatchhtmltemplate.jpeg"
+  },
+  {
+    "id": 93,
+    "name": "Women Fashion Necklace",
+    "category": "Women",
+    "price": 1499,
+    "image": "https://image.made-in-china.com/2f0j00EqhUOBmJMyoG/Cheap-2020-Guangzhou-HD-Zircon-Jewelry-Set-with-Necklace-and-Earrings.jpg"
+  },
+  {
+    "id": 94,
+    "name": "Women Earrings Set",
+    "category": "Women",
+    "price": 999,
+    "image": "https://brilliantco.com.au/cdn/shop/products/KrystalCouture-KCTG6484RG-1.jpg?v=1684453897&width=1946"
+  },
+  {
+    "id": 95,
+    "name": "Women Fashion Scarf",
+    "category": "Women",
+    "price": 1299,
+    "image": "https://cdn.i24news.tv/upload/image/009d7a644c7798d7748624ffe2e369efa49a4eba.png"
+  },
+  {
+    "id": 96,
+    "name": "Women Casual Sandals",
+    "category": "Women",
+    "price": 2299,
+    "image": "https://cdn.prod.website-files.com/5dfd2203d08cf403964198c2/62bb2428d033eabc31e8c88f_60b7d8afd6abd941803a99fc_sdfdsfdsfsdfsdfsdfsd.png"
+  },
+  {
+    "id": 97,
+    "name": "Women Premium Heels",
+    "category": "Women",
+    "price": 4499,
+    "image": "https://di2ponv0v5otw.cloudfront.net/posts/2023/11/29/656747ea253a8c770b3cbaba/m_656749ae52eee11a619528dc.jpg"
+  },
+  {
+    "id": 98,
+    "name": "Women Makeup Organizer",
+    "category": "Women",
+    "price": 1599,
+    "image": "https://www.vlando.com/cdn/shop/files/7a74bf7326d16fd8e30c31a40f561de0.jpg?v=1772781160&width=1920"
+  },
+  {
+    "id": 99,
+    "name": "Women Travel Backpack",
+    "category": "Women",
+    "price": 2799,
+    "image": "https://media-photos.depop.com/b1/8939790/1398669938_f8354840689941f280abe24222fedbde/P0.jpg"
+  },
+  {
+    "id": 100,
+    "name": "Women Fashion Cap",
+    "category": "Women",
+    "price": 1199,
+    "image": "https://baseec-img-mng.akamaized.net/images/item/origin/2750ae20d2729d77b513d02400d874e1.jpg"
   }
 ]

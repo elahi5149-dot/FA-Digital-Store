@@ -448,6 +448,13 @@ function renderProducts(products) {
                 >
                     Add to Cart
                 </button>
+                <button
+                    class="details-btn"
+                    onclick="window.location.href='product.html?id=${encodeURIComponent(product.id)}'"
+                    style="width:100%;margin-top:8px;padding:12px;border:1px solid #2563eb;border-radius:8px;background:#eff6ff;color:#1d4ed8;font-weight:bold;cursor:pointer;"
+                >
+                    View Details →
+                </button>
             </div>
         </div>
     `).join("");

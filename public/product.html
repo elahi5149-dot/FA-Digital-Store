@@ -15,7 +15,15 @@ nav a{color:white;text-decoration:none;font-weight:bold}
 .back{display:inline-block;margin-bottom:20px;color:#1d4ed8;text-decoration:none;font-weight:bold}
 .details{background:white;border-radius:16px;padding:25px;display:grid;grid-template-columns:1fr 1fr;gap:30px;box-shadow:0 5px 25px #0000000d}
 .image-box{background:#f8fafc;border-radius:12px;display:flex;align-items:center;justify-content:center;min-height:330px}
+
+.image-box{flex-direction:column;padding:12px;gap:12px}
 .image-box img{width:100%;height:420px;object-fit:contain;border-radius:10px}
+.thumbnail-list{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;width:100%}
+.thumbnail{width:68px;height:68px;object-fit:cover;border:2px solid #ddd;border-radius:8px;cursor:pointer;background:white}
+.thumbnail.active{border-color:#2563eb}
+.thumbnail:focus{outline:2px solid #2563eb;outline-offset:2px}
+@media(max-width:700px){.image-box img{height:300px}.thumbnail{width:58px;height:58px}}
+
 .category{display:inline-block;background:#dbeafe;color:#1d4ed8;padding:7px 12px;border-radius:20px;font-size:13px}
 h2{font-size:28px;margin:16px 0}
 .price{font-size:27px;color:#15803d;font-weight:bold;margin:18px 0}
@@ -51,6 +59,7 @@ footer{text-align:center;padding:25px;color:#666}
 const params=new URLSearchParams(location.search);
 const productId=params.get("id");
 let selectedProduct=null;
+let productImages=[];
 
 function getCart(){
   try{return JSON.parse(localStorage.getItem("cart"))||[]}
@@ -108,11 +117,21 @@ async function loadProduct(){
     const category=escapeHTML(selectedProduct.category||"General");
     const description=escapeHTML(selectedProduct.description||"Quality product from FA Digital Store. Contact us if you need more information.");
     const image=escapeHTML(selectedProduct.image||"https://placehold.co/600x600/png?text=Product");
+    productImages = Array.isArray(selectedProduct.images)
+      ? [...new Set(selectedProduct.images.filter(url => typeof url === "string" && /^https?:\/\//i.test(url)))]
+      : [];
+    if(selectedProduct.image && !productImages.includes(selectedProduct.image)){
+      productImages.unshift(selectedProduct.image);
+    }
+    if(!productImages.length) productImages=["https://placehold.co/600x600/png?text=Product"];
     const price=Number(selectedProduct.price)||0;
     container.className="details";
     container.innerHTML=`
       <div class="image-box">
-        <img src="${image}" alt="${name}" onerror="this.onerror=null;this.src='https://placehold.co/600x600/png?text=Product'">
+        <img id="mainProductImage" src="${escapeHTML(productImages[0])}" alt="${name}" onerror="this.onerror=null;this.src='https://placehold.co/600x600/png?text=Image+Unavailable'">
+        <div class="thumbnail-list" id="thumbnailList" aria-label="Product images">
+          ${productImages.map((url,index)=>`<img class="thumbnail ${index===0?'active':''}" src="${escapeHTML(url)}" alt="${name} image ${index+1}" data-index="${index}" role="button" tabindex="0" onclick="selectProductImage(${index})" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();selectProductImage(${index})}" onerror="this.style.display='none'">`).join("")}
+        </div>
       </div>
       <section class="product-info">
         <span class="category">${category}</span>
@@ -133,6 +152,17 @@ async function loadProduct(){
     container.innerHTML='<h2>Unable to load product</h2><p>Please check your internet connection and try again.</p><a href="shop.html">Back to Shop</a>';
   }
 }
+
+function selectProductImage(index){
+  if(!productImages[index]) return;
+  const main=document.getElementById("mainProductImage");
+  if(!main) return;
+  main.src=productImages[index];
+  document.querySelectorAll(".thumbnail").forEach((thumb,i)=>{
+    thumb.classList.toggle("active",i===index);
+  });
+}
+
 function changeQuantity(change){
   const input=document.getElementById("quantity");
   if(!input)return;
